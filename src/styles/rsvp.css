@@ -1,0 +1,39 @@
+.rsvp-section {
+  background: #f8f3f2;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.rsvp-section h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.5rem;
+  color: #b97a84;
+}
+
+.rsvp-form {
+  max-width: 320px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form button {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+}
+
+.rsvp-form button {
+  background: #b97a84;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.rsvp-form button:hover {
+  background: #9c5f69;
+}

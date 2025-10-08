@@ -1,0 +1,114 @@
+.invitation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fffaf8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    flex-direction: column;
+  }
+  
+  /* Ribbon container matches card width */
+  .invitation-ribbon-container {
+    width: 100%;
+    max-width: 600px; /* same as card max-width */
+    margin-bottom: -20px; /* overlap card */
+    z-index: 1;
+  }
+  
+  .invitation-ribbon-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  /* Main card */
+  .invitation-card {
+    width: 100%;
+    max-width: 600px;
+    background-image: url('/wedding.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 15px 15px; /* only bottom corners rounded */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 0;
+    /* padding removed from card itself */
+  }
+  
+  /* Content inside card */
+  .invitation-card-content {
+    text-align: center;
+    padding: 60px 30px 80px; /* moved padding here */
+  }
+  
+  .invitation-card h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: 2rem;
+    color: #FFf;
+    margin-bottom: 0.5rem;
+  }
+  
+  .invitation-card p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #FFf;
+  }
+  
+  .countdown {
+    font-size: 1.2rem;
+    color: #FFf;
+    margin-bottom: 2rem;
+    font-weight: bold;
+  }
+  
+  .countdown span {
+    margin: 0 5px;
+  }
+  
+  .invitation-card button {
+    font-size: 1rem;
+    padding: 10px 25px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    background: none;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.3s;
+  }
+  
+  .invitation-card button:hover {
+    background: #fff;
+    color: #5b7da6;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .invitation-card {
+      width: 90%;
+    }
+  
+    .invitation-card-content {
+      padding: 50px 20px 30px;
+    }
+  
+    .invitation-card h1 {
+      font-size: 1.8rem;
+    }
+  
+    .countdown {
+      font-size: 1rem;
+    }
+  
+    .invitation-ribbon-container {
+      max-width: 90%;
+      margin-bottom: -15px;
+    }
+  }
+  

@@ -1,0 +1,79 @@
+.details-section {
+  background: none;
+  padding: 80px 20px;
+  min-height: 100vh;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+}
+
+.details-section h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.5rem;
+  color: #b97a84;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Container for all cards */
+.details-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1; /* ensure cards appear above background */
+}
+
+/* Individual card */
+.details-card {
+  background: rgba(255, 250, 248, 0.9); /* slightly transparent so bg shows */
+  border: 2px solid #b97a84;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  padding: 30px 20px;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: 
+    linear-gradient(rgba(255, 255, 255, 1), rgba(168,194,219,0.8)), /* dusty blue overlay */
+    url('/thorns.jpg') center/cover no-repeat; /* background image */
+}
+
+.details-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.details-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.details-card h3 {
+  font-size: 1.2rem;
+  color: #b97a84;
+  margin-bottom: 10px;
+}
+
+.details-card p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .details-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .details-card {
+    width: 80%;
+  }
+}
