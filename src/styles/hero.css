@@ -1,81 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+
 .hero-section {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 200vh; /* parallax scroll area */
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
 }
 
-.hero-section img.hero-image {
+.hero-parallax {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 100%;
-  width: auto;
-  min-width: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-/* Text overlay */
-.hero-overlay {
-  position: relative;
+  left: 0;
   z-index: 1;
+}
+
+/* Absolute content over image */
+.hero-content {
+  position: absolute;
+  top: 10%; /* adjust this to move content vertically */
+  left: 50%;
+  transform: translateX(-50%); /* only horizontal centering */
+  z-index: 2;
   text-align: center;
-  backdrop-filter: brightness(0.65); /* darken image behind text */
-  padding: 20px;
-  border-radius: 10px;
+  color: #5b7da6;
 }
 
-.hero-overlay h1.couple-names {
-  font-family: "Great Vibes", cursive;
+/* Lavishly Yours font */
+.lavishly-yours-regular {
+  font-family: 'Lavishly Yours', cursive;
+}
+
+
+/* Remove excessive padding-bottom */
+.wedding-date,
+.wedding-location {
   font-size: 3rem;
-  margin-bottom: 10px;
-  color: #d6e0f0; /* dusty blue text */
+  padding: 0; /* remove padding */
+  margin: 0;  /* reset margin */
+  line-height: 1.2; /* tighter line spacing */
+  color: #5b7da6;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+  padding-bottom: 2rem;
+  font-family: "Lavishly Yours", cursive;
+  font-weight: 600;
+  font-style: normal;
+
 }
 
-.hero-overlay p {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
-  color: #d6e0f0; /* match theme */
+/* Couple name spacing */
+.couple-names {
+  font-size: 8rem;
+  color: #5b7da6;
+  text-shadow: 0 0 10px rgba(234, 234, 235, 0.7);
+  margin-bottom: 10px; /* small gap to next element */
+  line-height: 1.1;
 }
+
+/* Optional: wrap couple name + date in a container for tighter spacing */
+.hero-text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* controls spacing between name, date, location */
+}
+
+
 
 .countdown {
-  margin-top: 15px;
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #d6e0f0;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* spacing between boxes */
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
-.countdown span {
-  margin: 0 5px;
+.countdown-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 15px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px) brightness(1);
+  background-color: rgba(30, 60, 90, 0.6); /* dusty blue glass */
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  min-width: 80px;
+}
+
+.countdown-box .count {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgba(30, 60, 90, 0.6);
+
+}
+
+.countdown-box .label {
+  font-size: 1rem;
+  color: rgba(30, 60, 90, 0.6);
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-  .hero-overlay h1.couple-names {
-    font-size: 2.5rem;
+@media (max-width: 768px) {
+  .countdown-box {
+    padding: 15px 10px;
+    min-width: 60px;
   }
-  .hero-overlay p {
-    font-size: 1rem;
+  .countdown-box .count {
+    font-size: 1.5rem;
   }
-  .countdown {
-    font-size: 1.1rem;
+  .countdown-box .label {
+    font-size: 0.8rem;
   }
 }
 
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .couple-names {
+    font-size: 3rem;
+  }
+  .wedding-date,
+  .wedding-location {
+    font-size: 1.2rem;
+  }
+ 
+}
+
 @media (max-width: 768px) {
-  .hero-overlay h1.couple-names {
-    font-size: 2rem;
+  .couple-names {
+    font-size: 2.5rem;
   }
-  .hero-overlay p {
-    font-size: 0.9rem;
-  }
-  .countdown {
+  .wedding-date,
+  .wedding-location {
     font-size: 1rem;
   }
+ 
 }
