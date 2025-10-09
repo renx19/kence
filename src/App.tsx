@@ -10,6 +10,7 @@ import Rsvp from "./sections/rsvp";
 import song from "./assets/song.mp3"; // import audio
 
 import './styles/global.css'
+import Gallery from "./sections/gallery";
 
 const App: React.FC = () => {
   const [opened, setOpened] = useState(false);
@@ -38,6 +39,7 @@ const App: React.FC = () => {
                 <Hero />
                 <Story />
                 <Details />
+                <Gallery />
                 <Rsvp />
               </>
             }
