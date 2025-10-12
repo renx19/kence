@@ -20,26 +20,22 @@ const Story: React.FC = () => {
             className="story-text"
             initial="hidden"
             whileInView="visible"
-             viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             variants={variants}
             transition={{ delay: 0, duration: 0.8, ease: "easeOut" }}
           >
             <h2>Our Story</h2>
             <p>
-              It all began with a smile. From classmates to soulmates, our journey
-              has been filled with laughter, adventures, and love.
+              A frienship that develops over time. From schoolmate to soulmate, our journey of laughter, adventure and love.
             </p>
-            <p>
-              From our first coffee date to traveling together, every moment has
-              been special. We can't wait to share our wedding day with all of you!
-            </p>
+         
           </motion.div>
 
           <motion.div
             className="story-image"
             initial="hidden"
             whileInView="visible"
-             viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             variants={variants}
             transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
           >
@@ -54,7 +50,7 @@ const Story: React.FC = () => {
             className="story-image"
             initial="hidden"
             whileInView="visible"
-             viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             variants={variants}
             transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
           >
@@ -70,14 +66,10 @@ const Story: React.FC = () => {
             variants={variants}
             transition={{ delay: 0.9, duration: 0.8, ease: "easeOut" }}
           >
-            <h2>Our Story</h2>
+           
+     
             <p>
-              It all began with a smile. From classmates to soulmates, our journey
-              has been filled with laughter, adventures, and love.
-            </p>
-            <p>
-              From our first coffee date to traveling together, every moment has
-              been special. We can't wait to share our wedding day with all of you!
+             From our first mcdo date to movie date that everymoment is special. We can’t wait to share our lovey wedding day with all of you.
             </p>
           </motion.div>
         </div>

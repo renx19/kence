@@ -5,13 +5,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+}
+.story-wrapper{
+    max-width: 1200px;
 }
 
 .story-content {
   display: flex;
   align-items: center;
   gap: 60px;
-  max-width: 1200px;
   width: 100%;
   flex-wrap: wrap;
   /* stack on mobile */
@@ -45,7 +48,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 380px;
   overflow: hidden; /* ensures background doesn't spill out */
 }
 
@@ -73,17 +75,27 @@
 }
 
 /* Responsive: stack content on small screens */
+/* Responsive: stack content on small screens */
 @media (max-width: 768px) {
   .story-content {
     flex-direction: column;
     gap: 30px;
   }
 
+  /* Text first, then image */
   .story-text {
+    order: 1;
     text-align: center;
+  }
+
+  .story-image {
+    order: 2;
   }
 }
 
-.story-background{
 
+@media (max-width: 1024px) and (min-width: 620px) {
+  .story-wrapper {
+    padding: 6rem;
+  }
 }

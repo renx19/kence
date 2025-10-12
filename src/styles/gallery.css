@@ -30,19 +30,34 @@
   padding-left: 1rem; /* gutter */
   background-clip: padding-box;
 }
-
+/* Ensure images keep aspect ratio and fit nicely */
 .gallery-column img {
-  width: 100%;
+  width: 100%;          /* fills column width */
+  height: auto;         /* keeps aspect ratio */
+  max-width: 100%;
+  display: block;
   margin-bottom: 1rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
   transition: transform 0.3s ease;
-  display: block;
+  max-height: 450px; /* new: limit max height for all images */
 }
 
+/* Portrait and Landscape adjustments */
+.gallery-column img.portrait {
+  height: 400px;       /* smaller height */
+}
+
+.gallery-column img.landscape {
+  height: 250px;       /* smaller height */
+}
+
+/* Hover */
 .gallery-column img:hover {
   transform: scale(1.03);
 }
+
 
 .gallery-actions {
   margin-top: 2rem;

@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/details.css";
+import { motion } from "framer-motion";
 
 const mapLink = (query: string) =>
   `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
@@ -85,120 +86,94 @@ const Details: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+
+  // Variants for left/right swipe-in + slight pop
+  const cardVariantsLeft = {
+    hidden: { opacity: 0, x: -100, scale: 0.9 },
+    visible: { opacity: 1, x: 0, scale: 1 }
+  };
+
+  const cardVariantsRight = {
+    hidden: { opacity: 0, x: 100, scale: 0.9 },
+    visible: { opacity: 1, x: 0, scale: 1 }
+  };
+
+  const parentVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.3 } }
+  };
+
+
   return (
     <section id="details" className="details-section">
       <div className="details-wrapper">
         <h2>Wedding Details</h2>
 
-        <div className="details-cards">
+
+        <motion.div
+          className="details-cards"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+          variants={parentVariants}
+        >
           {/* Ceremony */}
-          <div className="details-card">
-
-
-
+          <motion.div
+            className="details-card-ceremony"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+            variants={cardVariantsLeft}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <h3>The Ceremony</h3>
             <div className="line-bar"></div>
             <p className="details-intro">
-              We’ll exchange vows surrounded by our dearest family and friends, in a moment filled with love, laughter, and heartfelt promises. It’s the beginning of our forever, and we’re so grateful to share this special day with those who mean the most to us.
+              We’ll exchange vows surrounded by our dearest family and friends in a heartfelt celebration of love and commitment.
+              Expect a morning full of joyful smiles, touching moments, and the warmth of togetherness.
+              Our ceremony will be intimate yet memorable, capturing the spirit of our journey together.
+              Please join us in creating a day filled with laughter, love, and everlasting memories as we start this beautiful chapter of our lives.
             </p>
             <ul className="details-meta">
-              <li className="meta-date"><strong>Date:</strong> November 22, 2025</li>
-              <li className="meta-time"><strong>Time:</strong> 3:00 PM</li>
-              <li className="meta-venue"><strong>Venue:</strong> {ceremonyPlace}</li>
+              <li><strong>Date:</strong> November 22, 2025</li>
+              <li><strong>Time:</strong> 3:00 PM</li>
+              <li><strong>Venue:</strong> {ceremonyPlace}</li>
             </ul>
             <div className="details-actions">
-              <button className="btn" onClick={() => openFor("ceremony")}>
-                How To Get There
-              </button>
-              <a
-                className="btn btn-outline"
-                href={mapLink(ceremonyPlace)}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Map
-              </a>
+              <button className="btn" onClick={() => openFor("ceremony")}>How To Get There</button>
+              <a className="btn btn-outline" href={mapLink(ceremonyPlace)} target="_blank" rel="noopener noreferrer">View Map</a>
             </div>
-          </div>
+          </motion.div>
 
           {/* Reception */}
-          <div className="details-card">
-
+          <motion.div
+            className="details-card-reception"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+            variants={cardVariantsRight}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <h3>The Reception</h3>
             <div className="line-bar"></div>
-
             <p className="details-intro">
-              After the ceremony, join us for an evening of celebration filled with delicious food, joyful dancing, and heartfelt moments. It’s a time to unwind, connect, and create unforgettable memories together as we begin our journey as a married couple.
+              After the ceremony, join us for an enchanting evening of celebration filled with delicious food, lively music, and heartfelt moments with friends and family.
+              Dance, laugh, and toast to new beginnings as we continue to celebrate the love and joy that surrounds us.
+              From the first bite to the final dance, the reception will be a time to relax, connect, and make unforgettable memories together.
+              We can’t wait to share this magical evening with all of you and create moments that will be cherished forever.
             </p>
             <ul className="details-meta">
-              <li className="meta-date"><strong>Date:</strong> December 15, 2025</li>
-              <li className="meta-time"><strong>Time:</strong> 6:00 PM </li>
-
-              <li className="meta-venue"><strong>Venue:</strong> {receptionPlace}</li>
+              <li><strong>Date:</strong> December 15, 2025</li>
+              <li><strong>Time:</strong> 6:00 PM</li>
+              <li><strong>Venue:</strong> {receptionPlace}</li>
             </ul>
-
             <div className="details-actions">
-              <button className="btn" onClick={() => openFor("reception")}>
-                How To Get There
-              </button>
-              <a
-                className="btn btn-outline"
-                href={mapLink(receptionPlace)}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Map
-              </a>
+              <button className="btn" onClick={() => openFor("reception")}>How To Get There</button>
+              <a className="btn btn-outline" href={mapLink(receptionPlace)} target="_blank" rel="noopener noreferrer">View Map</a>
             </div>
-          </div>
+          </motion.div>
+        </motion.div>
 
-          {/* Dress Code (unchanged from earlier) */}
-          <div className="details-card">
-            <h3>Dress Code</h3>
-            <div className="line-bar"></div>
-
-            <p className="details-intro">
-              <strong>Formal / Semi-formal Attire</strong><br />
-              We kindly ask guests to dress in a way that reflects the elegance of the occasion. Soft tones and polished styles are encouraged to complement the overall theme.
-            </p>
-
-            <div className="dress-guidelines">
-              <ul className="details-meta">
-                <li className="meta-men"><strong>Men:</strong> Long-sleeved dress shirts and slacks</li>
-                <li className="meta-women"><strong>Women:</strong> Mid-length or full-length dresses</li>
-     
-              </ul>
-            </div>
-
-         
-            <div className="color-palette">
-              <h4>Color Guide</h4>
-              <div className="palette-wrapper">
-                <div className="palette-group">
-                  <span>Godparents:</span>
-                  <div className="swatches">
-                    <div className="swatch" style={{ background: "#dbe2ea" }} />
-                    <div className="swatch" style={{ background: "#c7d1db" }} />
-                    <div className="swatch" style={{ background: "#adbcc9" }} />
-                    <div className="swatch" style={{ background: "#8ea3b8" }} />
-                    <div className="swatch" style={{ background: "#eef3f7" }} />
-                  </div>
-                </div>
-                <div className="palette-group">
-                  <span>Guests:</span>
-                  <div className="swatches">
-                    <div className="swatch" style={{ background: "#dfeaf2" }} />
-                    <div className="swatch" style={{ background: "#efe7d6" }} />
-                    <div className="swatch" style={{ background: "#e8efe6" }} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-        </div>
 
         {/* Directions Modal */}
         {openModal && (
@@ -263,7 +238,7 @@ const Details: React.FC = () => {
 
         )}
       </div>
-    </section>
+    </section >
   );
 };
 

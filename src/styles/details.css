@@ -1,32 +1,19 @@
 /* ---------- Dusty Blue Theme Tokens ---------- */
 :root {
-  /* Core dusty blue spectrum */
   --primary-300: #85b3d6;
-  /* your current dusty blue */
   --primary-500: #5f8fb5;
-  /* deeper accent */
   --primary-700: #3e6a8f;
-  /* headings/accent on light bg */
   --primary-900: #27445d;
-  /* strongest contrast on light bg */
 
-  /* Surfaces & text tuned to cool neutrals */
   --surface: #f7f9fc;
-  /* card surface (cool, slightly blue) */
   --surface-soft: #eef3f7;
-  /* lighter surface for sections/badges */
   --text-strong: #253340;
-  /* main text color */
   --text-muted: #4b5b6c;
-  /* secondary text */
 
-  /* Borders & shadows (cool tone) */
   --border: #c7d1db;
   --shadow: 0 2px 12px rgba(39, 68, 93, 0.12);
-  /* uses primary-900 hue */
   --shadow-hover: 0 4px 24px rgba(39, 68, 93, 0.22);
 
-  /* Palette heading accent */
   --accent: var(--primary-700);
 }
 
@@ -35,12 +22,11 @@
   background: var(--primary-300);
   padding: 40px 0;
   text-align: center;
-  min-height: 100vh;
+  min-height: 100vh;  
 
+  display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
-
 }
 
 .details-section h2 {
@@ -50,128 +36,191 @@
   font-weight: 700;
 }
 
-/* ---------- Cards ---------- */
 .details-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 32px;
+  max-width: 1200px;
+  overflow: visible; /* important: allows card shadow + scale to show */
 }
 
-.details-card,
-.details-card-dresscode {
-  background: var(--surface);
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-  padding: 24px 20px;
-  width: 400px;
-  height: 400px;
+/* ---------- Base Card Styles ---------- */
+.details-card-ceremony,
+.details-card-reception {
+  position: relative;
+  width: 500px;
   max-width: 90vw;
+  min-height: 450px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  transition: box-shadow 0.2s ease;
-
+  padding: 32px 24px;
+  border-radius: 16px;
+  overflow: hidden;
+  color: #fff;
+  box-shadow: var(--shadow);
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+  will-change: transform, box-shadow, filter;
 }
 
-.details-card:hover,
-.details-card-dresscode:hover {
+.details-card-ceremony:hover,
+.details-card-reception:hover {
+  transform: translateY(-12px) scale(1.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  filter: brightness(1.05); /* optional: subtle pop */
+}
+
+
+
+/* ---------- Specific Backgrounds ---------- */
+.details-card-ceremony {
+  background-image: url('../assets/Ceremony.jpeg');
+}
+
+.details-card-reception {
+  background-image: url('../assets/Reception.jpeg');
+}
+
+/* ---------- Overlay ---------- */
+.details-card-ceremony::before,
+.details-card-reception::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+  z-index: 0;
+}
+
+/* ---------- Card Content ---------- */
+.details-card-ceremony > *,
+.details-card-reception > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Headings ---------- */
+.details-card-ceremony h3,
+.details-card-reception h3 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ---------- Divider Line ---------- */
+.line-bar {
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+  margin: 0 auto 16px;
+  border-radius: 2px;
+}
+
+/* ---------- Intro Text ---------- */
+.details-card-ceremony .details-intro,
+.details-card-reception .details-intro {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ---------- Meta List ---------- */
+.details-meta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  margin-bottom: 20px;
+  list-style: none;
+}
+
+.details-meta li {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+/* Hover Effects */
+.details-meta li:hover {
+  background-color: rgba(255, 255, 255, 0.35); /* slightly brighter */
+  transform: scale(1.05); /* subtle pop */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* light shadow */
+}
+
+/* ---------- Actions / Buttons ---------- */
+.details-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Hover Effects ---------- */
+.details-card-ceremony:hover,
+.details-card-reception:hover {
   box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
 }
 
-@media (max-width: 900px) {
+/* ---------- Responsive ---------- */
+@media (max-width: 767px) {
   .details-cards {
     flex-direction: column;
     align-items: center;
     gap: 24px;
   }
 
-  .details-card,
-  .details-card-dresscode {
+  .details-card-ceremony,
+  .details-card-reception {
     width: 90vw;
-    max-width: 400px;
+   
   }
 }
 
-/* ---------- Dress Code Card (image + soft overlay) ---------- */
-.details-card-dresscode {
-  /* Add a soft dusty-blue tint overlay so text stays readable over the image */
-  /* background:
-    linear-gradient(rgba(133, 179, 214, 0.35), rgba(133, 179, 214, 0.35)),
-    url('../assets/dress-code.png') center/cover no-repeat; */
-  color: var(--text-strong);
+/* Mobile: small devices */
+@media (max-width: 560px) {
+  .details-card-ceremony,
+  .details-card-reception {
+    width: 90vw;
+    min-height: auto;
+    padding: 8px 10px;       /* even smaller padding */
+  }
+
+  .details-card-ceremony h3,
+  .details-card-reception h3 {
+    font-size: 0.95rem;      /* smaller heading */
+    margin-bottom: 6px;
+  }
+
+  .details-card-ceremony .details-intro,
+  .details-card-reception .details-intro {
+    font-size: 0.8rem;       /* smaller paragraph */
+    line-height: 1.3;        /* tighter line spacing */
+    margin-bottom: 6px;
+  }
+
+  .details-meta li {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
 }
 
-
-.details-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: var(--text-strong);
-  font-weight: 600;
-  text-align: start;
+@media (max-width: 1024px) and (min-width: 620px) {
+  .details-cards {
+   
+  }
 }
 
-.details-card p {
-  font-size: 1rem;
-  color: var(--text-muted);
-  margin-bottom: 14px;
-  line-height: 1.5;
-}
-
-
-.details-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  padding: 0;
-  margin: 1.5rem 0;
-  list-style: none;
-}
-
-.details-meta li {
-  background-color: #a3dcfd;
-  /* light gray */
-  border-radius: 999px;
-  padding: 0.5rem 1rem;
-  font-size: 0.95rem;
-  color: #333;
-  font-weight: 500;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.3s ease;
-}
-
-.details-meta li:hover {
-  background-color: #e5e7eb;
-  /* slightly darker on hover */
-}
-
-.details-meta strong {
-  font-weight: 600;
-  color: #1f2937;
-  /* dark gray */
-  margin-right: 0.25rem;
-}
-
-.details-intro {
-  font-size: 1rem;
-  color: var(--text-muted);
-  margin-bottom: 20px;
-  line-height: 1.5;
-  text-align: justify;
-  text-align-last: center;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-.details-actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
 
 .btn {
   background-color: #3498db;
@@ -207,85 +256,6 @@
   margin-bottom: 16px;
 }
 
-
-/* ---------- Color Palette ---------- */
-.color-palette {
-  text-align: left;
-}
-
-.palette-wrapper {
-  display: flex;
-  gap: 64px;
-  align-items: center;
-  justify-content: center;
-}
-
-.color-palette h4 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--accent);
-  /* replaces #91cfff */
-  margin-bottom: 8px;
-  text-align: center;
-}
-
-.palette-group {
-  margin-bottom: 10px;
-}
-
-.palette-group span {
-  font-weight: 600;
-  display: block;
-  margin-bottom: 5px;
-  color: var(--accent);
-}
-
-.meta-men,
-.meta-women {
-  background-color: #f5f7fa;
-  /* slightly lighter than other badges */
-  
-
-}
-
-.swatches {
-  display: flex;
-  gap: 8px;
-}
-
-.swatch {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  box-shadow: 0 1px 2px rgba(39, 68, 93, 0.12);
-}
-
-.dress-guidelines {
- 
-  text-align: left;
-
-}
-
-.dress-guidelines ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-}
-
-.dress-guidelines li {
-  font-size: 0.95rem;
-  color: #333;
-  margin-bottom: 6px;
-}
-
-.dress-guidelines strong {
-  color: #3e6a8f;
-  /* dusty blue accent */
-}
 
 
 /* ---------- Responsive ---------- */

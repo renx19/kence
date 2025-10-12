@@ -1,0 +1,127 @@
+.gifts-section {
+  background: #f9f9f9;
+  padding: 80px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gifts-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* 📝 Text side */
+.gifts-text {
+  flex: 1 1 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.gifts-text-inner {
+  max-width: 600px; /* ⬅️ matches image width */
+  width: 100%;
+}
+
+.gifts-text h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.8rem;
+  color: #b97a84;
+  margin-bottom: 1rem;
+}
+
+.gifts-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.gifts-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gifts-details li {
+  background: #ffffff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-size: 1rem;
+}
+
+.gifts-details strong {
+  color: #b97a84;
+}
+
+/* 👗 Image side */
+.gifts-image {
+  flex: 1 1 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gifts-image img {
+  width: 600px;
+  max-width: 100%;
+  min-height: 450px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 📱 Responsive */
+@media (max-width: 1024px) {
+  .gifts-wrapper {
+    gap: 30px;
+  }
+
+  .gifts-text h2 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .gifts-wrapper {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .gifts-text-inner {
+    max-width: 600px;
+  }
+
+  .gifts-image img {
+    width: 100%;
+    max-width: 600px;
+    min-height: 350px;
+  }
+
+  .gifts-text h2 {
+    font-size: 2rem;
+  }
+
+  .gifts-text p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gifts-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .gifts-image img {
+    min-height: 300px;
+  }
+}

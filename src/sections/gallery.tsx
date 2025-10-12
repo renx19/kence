@@ -1,23 +1,20 @@
-import React, { useState } from "react";
 import Masonry from "react-masonry-css";
 import "../styles/gallery.css";
 
 const imageList = [
-  "/FLO07675.jpeg",
-  "/FLO07682.jpeg",
-  "/FLO07687.jpeg",
-  "/FLO07801.jpeg",
-  "/FLO07806.jpeg",
-  "/FLO07880.jpeg",
-  "/FLO08009.jpeg",
-  "/FLO08162.jpeg",
-  "/FLO08195.jpeg",
+  { src: "/FLO07648.jpeg", type: "portrait" },
+  { src: "/FLO07801.jpeg", type: "landscape" },
+  { src: "/FLO07777.jpeg", type: "portrait" },
+  { src: "/FLO07682.jpeg", type: "landscape" },
+  { src: "/FLO07958.jpeg", type: "portrait" },
+  { src: "/FLO08162.jpeg", type: "landscape" },
+  { src: "/FLO07806.jpeg", type: "portrait" },
+  { src: "/FLO07880.jpeg", type: "landscape" },
+  { src: "/FLO08195.jpeg", type: "portrait" },
 ];
 
 const Gallery = () => {
-  const [visibleCount, setVisibleCount] = useState(6);
-
-  const breakpointColumns = {
+  const breakpointCols = {
     default: 3,
     1024: 2,
     640: 1,
@@ -29,22 +26,26 @@ const Gallery = () => {
         <h2>Gallery</h2>
 
         <Masonry
-          breakpointCols={breakpointColumns}
+          breakpointCols={breakpointCols}
           className="gallery-grid"
           columnClassName="gallery-column"
         >
-          {imageList.slice(0, visibleCount).map((src, i) => (
-            <img key={i} src={src} alt={`Gallery ${i + 1}`} loading="lazy" />
+          {imageList.map((img, i) => (
+            <img
+              key={i}
+              src={img.src}
+              alt={`Gallery ${i + 1}`}
+              loading="lazy"
+              className={img.type} // portrait / landscape
+            />
           ))}
         </Masonry>
 
-        {visibleCount < imageList.length && (
-          <div className="gallery-actions">
-            <button className="btn" onClick={() => setVisibleCount((prev) => prev + 6)}>
-              Show More
-            </button>
-          </div>
-        )}
+        <div className="gallery-actions">
+          <a href="/gallery" className="btn">
+            View Full Gallery
+          </a>
+        </div>
       </div>
     </section>
   );
