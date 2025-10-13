@@ -1,7 +1,7 @@
 /* ---------- Dusty Blue Theme Tokens ---------- */
 :root {
-  --primary-300: #85b3d6;
-  --primary-500: #5f8fb5;
+  --primary-300: #84add1;
+  --primary-500: #5b7da6;
   --primary-700: #3e6a8f;
   --primary-900: #27445d;
 
@@ -19,7 +19,7 @@
 
 /* ---------- Section ---------- */
 .details-section {
-  background: var(--primary-300);
+  background: var(--primary-500);
   padding: 40px 0;
   text-align: center;
   min-height: 100vh;  
@@ -32,7 +32,7 @@
 .details-section h2 {
   font-size: 2.2rem;
   margin-bottom: 32px;
-  color: var(--primary-900);
+  color: var(--surface);
   font-weight: 700;
 }
 
@@ -76,11 +76,11 @@
 
 /* ---------- Specific Backgrounds ---------- */
 .details-card-ceremony {
-  background-image: url('../assets/Ceremony.jpeg');
+  background-image: url('/Ceremony.jpeg');
 }
 
 .details-card-reception {
-  background-image: url('../assets/Reception.jpeg');
+  background-image: url('/Reception.jpeg');
 }
 
 /* ---------- Overlay ---------- */

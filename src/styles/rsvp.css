@@ -1,7 +1,8 @@
 .rsvp-section {
-  background: #f8f3f2;
+  background: #5b7da6;
   text-align: center;
   padding: 100px 20px;
+  min-height: 100vh;
 }
 
 .rsvp-section h2 {

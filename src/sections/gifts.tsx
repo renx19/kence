@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../styles/gift.css";
-import dressCodeImg from "../assets/dress-code.png"; // 🪄 replace with your image
+
 
 const Gifts: React.FC = () => {
   const variants = {
@@ -51,7 +51,7 @@ const Gifts: React.FC = () => {
           variants={variants}
           transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
         >
-          <img src={dressCodeImg} alt="Dress Code" />
+          <img src="/dress-code.png" alt="Dress Code" />
         </motion.div>
       </div>
     </section>

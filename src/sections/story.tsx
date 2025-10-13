@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../styles/story.css";
-import storyImage from "../../public/FLO08009.jpeg";
-import storyImage2 from "../../public/FLO07801.jpeg";
+
 
 const Story: React.FC = () => {
   // variants without function
@@ -40,7 +39,7 @@ const Story: React.FC = () => {
             transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
           >
             <div className="story-bg"></div>
-            <img src={storyImage} alt="Our journey" />
+            <img src="/FLO07801.jpeg" alt="Our journey" />
           </motion.div>
         </div>
 
@@ -55,7 +54,7 @@ const Story: React.FC = () => {
             transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
           >
             <div className="story-bg"></div>
-            <img src={storyImage2} alt="Our journey" />
+            <img src="/FLO08009.jpeg" alt="Our journey" />
           </motion.div>
 
           <motion.div

@@ -1,5 +1,5 @@
 .gifts-section {
-  background: #f9f9f9;
+  background: #d0e2f2;
   padding: 80px 20px;
   min-height: 100vh;
   display: flex;
@@ -8,7 +8,7 @@
 }
 
 .gifts-wrapper {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -25,7 +25,8 @@
 }
 
 .gifts-text-inner {
-  max-width: 600px; /* ⬅️ matches image width */
+  max-width: 600px;
+  /* ⬅️ matches image width */
   width: 100%;
 }
 

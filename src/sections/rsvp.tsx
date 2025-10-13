@@ -14,10 +14,8 @@ const Rsvp: React.FC = () => {
         "https://script.google.com/macros/s/AKfycbwvQ5RRMTBKX0ZJgjxEOilBBPElCWlrmOf-o6sHjWqDcLRByk80DOkYSZ79aRjauq-X0A/exec",
         {
           method: "POST",
-          mode: "no-cors", // bypass CORS
-          headers: {
-            "Content-Type": "application/json",
-          },
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ name, attendance }),
         }
       );
@@ -36,27 +34,38 @@ const Rsvp: React.FC = () => {
 
   return (
     <section id="rsvp" className="rsvp-section">
-      <h2>RSVP</h2>
-      <p>Will you attend our special day?</p>
-      <form onSubmit={handleSubmit} className="rsvp-form">
-        <input
-          type="text"
-          placeholder="Full Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        <select
-          value={attendance}
-          onChange={(e) => setAttendance(e.target.value)}
-          required
-        >
-          <option value="">Select your response</option>
-          <option value="Yes">Yes, I’ll be there!</option>
-          <option value="No">Sorry, can’t make it</option>
-        </select>
-        <button type="submit">Send RSVP</button>
-      </form>
+      <div className="rsvp-card">
+        <h2>RSVP</h2>
+        <p>Will you attend our special day?</p>
+
+        <form onSubmit={handleSubmit} className="rsvp-form" noValidate>
+          <label className="sr-only" htmlFor="rsvp-name">Full Name</label>
+          <input
+            id="rsvp-name"
+            type="text"
+            placeholder="Full Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            autoComplete="name"
+          />
+
+          <label className="sr-only" htmlFor="rsvp-attendance">Attendance</label>
+          <select
+            id="rsvp-attendance"
+            value={attendance}
+            onChange={(e) => setAttendance(e.target.value)}
+            required
+          >
+            <option value="">Select your response</option>
+            <option value="Yes">Yes, I’ll be there!</option>
+            <option value="No">Sorry, can’t make it</option>
+          </select>
+
+          <button type="submit">Send RSVP</button>
+        </form>
+      </div>
+
       <ToastContainer position="top-right" autoClose={3000} />
     </section>
   );

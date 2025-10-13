@@ -1,6 +1,6 @@
 .story-section {
   background: #d0e2f2;
-  padding: 80px 20px;
+  padding: 40px 20px;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -57,7 +57,7 @@
   left: -30px;
   right: -30px;
   bottom: -30px;
-  background-image: url('../assets//bg.png');
+  background-image: url('/bg.png');
   background-size: cover;
   background-position: center;
   z-index: 2; /* higher than the image */
