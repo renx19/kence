@@ -42,17 +42,7 @@ const Gifts: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* 👗 Right side — Dress Code Image */}
-        <motion.div
-          className="gifts-image"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
-          variants={variants}
-          transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
-        >
-          <img src="/dress-code.png" alt="Dress Code" />
-        </motion.div>
+    
       </div>
     </section>
   );

@@ -16,6 +16,7 @@ const Navbar: React.FC = () => {
            <li><a href="#gifts" onClick={() => setIsOpen(false)}>Gifts</a></li>
           <li><a href="#gallery" onClick={() => setIsOpen(false)}>Gallery</a></li>
           <li><a href="#rsvp" onClick={() => setIsOpen(false)}>RSVP</a></li>
+           <li><a href="#entourage" onClick={() => setIsOpen(false)}>Entourage</a></li>
         </ul>
 
         <div className={`menu-toggle ${isOpen ? "open" : ""}`} onClick={toggleMenu}>

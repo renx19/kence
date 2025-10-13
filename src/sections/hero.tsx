@@ -9,7 +9,6 @@ interface TypewriterProps {
   className?: string;
 }
 
-
 const WEDDING_DATE = new Date("2025-11-22T15:00:00");
 
 // 📝 Typewriter with re-trigger on scroll

@@ -1,0 +1,43 @@
+/* components/Loading.css */
+.loading-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: sans-serif;
+}
+
+.loading-container span {
+    font-size: 80px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    z-index: 1;
+    mix-blend-mode: difference;
+}
+
+.loading-container::before {
+    content: "";
+    width: 100px;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: move 4s linear infinite;
+    z-index: -1;
+}
+
+@keyframes move {
+    0%, 100% {
+        left: 0;
+    }
+    50% {
+        left: calc(100% - 100px);
+    }
+}
+
+/* Optional: body background */
+body {
+    background-color: black;
+}

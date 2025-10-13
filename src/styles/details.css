@@ -42,7 +42,7 @@
   justify-content: center;
   gap: 32px;
   max-width: 1200px;
-  overflow: visible; /* important: allows card shadow + scale to show */
+  overflow-x: hidden; 
 }
 
 /* ---------- Base Card Styles ---------- */
