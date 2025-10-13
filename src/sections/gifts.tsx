@@ -24,7 +24,7 @@ const Gifts: React.FC = () => {
           <div className="gifts-text-inner">
             <h2>Gifts</h2>
             <p>
-              Your presence at our wedding is the greatest gift of all. <br />
+              Your presence at our wedding is the greatest gift of all. 
               If you'd like to honor us with something extra, we would truly
               appreciate your love and support as we build our future together.
               <br />

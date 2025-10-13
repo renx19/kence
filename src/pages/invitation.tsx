@@ -8,7 +8,7 @@ interface InvitationProps {
     onOpen: () => void
 }
 
-const WEDDING_DATE = new Date("2025-12-25T15:00:00")
+const WEDDING_DATE = new Date("2025-11-22T15:00:00");
 
 export default function Invitation({ onOpen }: InvitationProps) {
     const [timeLeft, setTimeLeft] = useState({
@@ -65,10 +65,10 @@ export default function Invitation({ onOpen }: InvitationProps) {
                             <div className="invitation-card-content">
                                 <h1>We’re Getting Married!</h1>
                                 <p>You are warmly invited to celebrate our special day</p>
-                                <div className="countdown">
-                                    <span>{timeLeft.days}d</span>:
-                                    <span>{timeLeft.hours}h</span>:
-                                    <span>{timeLeft.minutes}m</span>:
+                                <div className="invitation-countdown">
+                                    <span>{timeLeft.days}d</span>
+                                    <span>{timeLeft.hours}h</span>
+                                    <span>{timeLeft.minutes}m</span>
                                     <span>{timeLeft.seconds}s</span>
                                 </div>
                                 <button onClick={handleOpen}>Open Invitation</button>

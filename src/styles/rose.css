@@ -1,0 +1,146 @@
+:root {
+  /* Theme colors (Dusty Blue + rose/greens) */
+  --dusty-blue: #4a6fa5;
+  --rose-1: #b23a48;
+  --rose-2: #8c1f2e;
+  --rose-highlight: #f8a8b3;
+  --green-1: #27632a;
+  --green-2: #1b4720;
+  --leaf-highlight: #4fa26e;
+}
+
+/* Scene background (optional—remove if placing inside footer/body) */
+.rose-scene {
+  background: linear-gradient(180deg, #e8f0fb 0%, #d1dfef 60%, var(--dusty-blue) 100%);
+  padding: 40px 20px;
+  display: inline-flex; /* inline for easy inline placement */
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+
+/* Flower container */
+.flower {
+  position: relative;
+  width: 240px;
+  height: 420px;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.2));
+}
+
+/* Optional gentle sway animation */
+.is-animated {
+  animation: sway 6s ease-in-out infinite;
+}
+
+/* Rose head */
+.rose {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 160px;
+}
+
+/* Petals */
+.petal {
+  position: absolute;
+  width: 90px;
+  height: 110px;
+  background: radial-gradient(
+    120px 120px at 30% 30%,
+    var(--rose-highlight) 0%,
+    var(--rose-1) 25%,
+    var(--rose-2) 70%
+  );
+  border-radius: 60% 60% 50% 50%;
+  box-shadow: inset -6px -10px 14px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+.p1 { left: 12px; top: 30px; transform: rotate(-24deg); }
+.p2 { right: 12px; top: 30px; transform: rotate(24deg); }
+.p3 { left: 4px; top: 60px; transform: rotate(-6deg); width: 100px; height: 115px; }
+.p4 { right: 4px; top: 60px; transform: rotate(6deg);  width: 100px; height: 115px; }
+.p5 { left: 50%; top: 15px; transform: translateX(-50%); width: 88px; height: 105px; }
+
+/* Bud */
+.bud {
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  transform: translateX(-50%);
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background:
+    conic-gradient(
+      from 220deg at 50% 50%,
+      var(--rose-2),
+      var(--rose-1) 45%,
+      var(--rose-highlight) 60%,
+      var(--rose-1) 80%,
+      var(--rose-2)
+    ),
+    radial-gradient(80px 80px at 45% 45%, rgba(255,255,255,0.35) 0%, transparent 60%);
+  z-index: 3;
+  box-shadow: inset -8px -8px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Stem */
+.stem {
+  position: absolute;
+  left: 50%;
+  top: 160px;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 240px;
+  background: linear-gradient(180deg, var(--green-1), var(--green-2));
+  border-radius: 999px;
+  z-index: 1;
+}
+
+/* Thorns (triangles with clip-path) */
+.thorn {
+  position: absolute;
+  width: 18px;
+  height: 12px;
+  background: var(--green-2);
+  clip-path: polygon(0 50%, 100% 0, 100% 100%); /* right-pointing triangle */
+  filter: drop-shadow(0 2px 1px rgba(0,0,0,0.25));
+}
+
+/* Left side thorns (flip horizontally) */
+.tl1 { left: -14px; top: 30px;  transform: rotate(-18deg) scaleX(-1); }
+.tl2 { left: -14px; top: 90px;  transform: rotate(-10deg) scaleX(-1); }
+.tl3 { left: -14px; top: 150px; transform: rotate(-22deg) scaleX(-1); }
+
+/* Right side thorns */
+.tr1 { right: -14px; top: 60px;  transform: rotate(18deg); }
+.tr2 { right: -14px; top: 120px; transform: rotate(10deg); }
+.tr3 { right: -14px; top: 180px; transform: rotate(22deg); }
+
+/* Leaves */
+.leaf {
+  position: absolute;
+  width: 120px;
+  height: 64px;
+  background: radial-gradient(
+    120px 60px at 30% 50%,
+    var(--leaf-highlight) 0%,
+    var(--green-1) 40%,
+    var(--green-2) 100%
+  );
+  border-radius: 60% 80% 60% 80% / 50% 60% 50% 60%;
+  box-shadow: inset -10px -10px 16px rgba(0, 0, 0, 0.25);
+  z-index: 0;
+}
+
+.leaf.left  { left: 10px;  top: 220px; transform: rotate(-24deg); }
+.leaf.right { right: 10px; top: 260px; transform: rotate(22deg) scale(0.92); }
+
+/* Animation */
+@keyframes sway {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(2px); }
+}

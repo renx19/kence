@@ -87,21 +87,9 @@ const Details: React.FC = () => {
   }, []);
 
 
-  // Variants for left/right swipe-in + slight pop
-  const cardVariantsLeft = {
-    hidden: { opacity: 0, x: -100, scale: 0.9 },
-    visible: { opacity: 1, x: 0, scale: 1 }
-  };
 
-  const cardVariantsRight = {
-    hidden: { opacity: 0, x: 100, scale: 0.9 },
-    visible: { opacity: 1, x: 0, scale: 1 }
-  };
 
-  const parentVariants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.3 } }
-  };
+
 
 
   return (
@@ -110,21 +98,18 @@ const Details: React.FC = () => {
         <h2>Wedding Details</h2>
 
 
-        <motion.div
+        <div
           className="details-cards"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
-          variants={parentVariants}
+
         >
           {/* Ceremony */}
           <motion.div
             className="details-card-ceremony"
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.3 }}
-            variants={cardVariantsLeft}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+             transition={{ duration: 0.8, delay: 0.5 }}
+
           >
             <h3>The Ceremony</h3>
             <div className="line-bar"></div>
@@ -148,12 +133,12 @@ const Details: React.FC = () => {
           {/* Reception */}
           <motion.div
             className="details-card-reception"
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.3 }}
-            variants={cardVariantsRight}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.5 }}
           >
+
             <h3>The Reception</h3>
             <div className="line-bar"></div>
             <p className="details-intro">
@@ -172,7 +157,7 @@ const Details: React.FC = () => {
               <a className="btn btn-outline" href={mapLink(receptionPlace)} target="_blank" rel="noopener noreferrer">View Map</a>
             </div>
           </motion.div>
-        </motion.div>
+        </div>
 
 
         {/* Directions Modal */}

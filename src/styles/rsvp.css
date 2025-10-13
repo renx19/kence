@@ -1,16 +1,36 @@
 .rsvp-section {
-  background: #5b7da6;
+  background: #d0e2f2;
   text-align: center;
   padding: 100px 20px;
   min-height: 100vh;
+   display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.rsvp-card-wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+
 
 .rsvp-section h2 {
   font-family: "Great Vibes", cursive;
   font-size: 2.5rem;
-  color: #b97a84;
+  color: #5b7da6;
 }
 
+.rsvp-card {
+  background: #fff;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.rsvp-card 
 .rsvp-form {
   max-width: 320px;
   margin: 20px auto;
@@ -28,7 +48,7 @@
 }
 
 .rsvp-form button {
-  background: #b97a84;
+  background: #5b7da6;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -36,5 +56,5 @@
 }
 
 .rsvp-form button:hover {
-  background: #9c5f69;
+  background: #426186;
 }

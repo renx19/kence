@@ -34,38 +34,39 @@ const Rsvp: React.FC = () => {
 
   return (
     <section id="rsvp" className="rsvp-section">
+      <div className="rsvp-card-wrapper">
       <div className="rsvp-card">
-        <h2>RSVP</h2>
-        <p>Will you attend our special day?</p>
+          <h2>RSVP</h2>
+          <p>Will you attend our special day?</p>
 
-        <form onSubmit={handleSubmit} className="rsvp-form" noValidate>
-          <label className="sr-only" htmlFor="rsvp-name">Full Name</label>
-          <input
-            id="rsvp-name"
-            type="text"
-            placeholder="Full Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            autoComplete="name"
-          />
+          <form onSubmit={handleSubmit} className="rsvp-form" noValidate>
+            <label className="sr-only" htmlFor="rsvp-name">Full Name</label>
+            <input
+              id="rsvp-name"
+              type="text"
+              placeholder="Full Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              autoComplete="name"
+            />
 
-          <label className="sr-only" htmlFor="rsvp-attendance">Attendance</label>
-          <select
-            id="rsvp-attendance"
-            value={attendance}
-            onChange={(e) => setAttendance(e.target.value)}
-            required
-          >
-            <option value="">Select your response</option>
-            <option value="Yes">Yes, I’ll be there!</option>
-            <option value="No">Sorry, can’t make it</option>
-          </select>
+            <label className="sr-only" htmlFor="rsvp-attendance">Attendance</label>
+            <select
+              id="rsvp-attendance"
+              value={attendance}
+              onChange={(e) => setAttendance(e.target.value)}
+              required
+            >
+              <option value="">Select your response</option>
+              <option value="Yes">Yes, I’ll be there!</option>
+              <option value="No">Sorry, can’t make it</option>
+            </select>
 
-          <button type="submit">Send RSVP</button>
-        </form>
+            <button type="submit">Send RSVP</button>
+          </form>
+        </div>
       </div>
-
       <ToastContainer position="top-right" autoClose={3000} />
     </section>
   );

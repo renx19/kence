@@ -1,7 +1,46 @@
 .footer {
-  background: #333;
+  background: #4a6fa5; /* Dusty Blue tone */
   color: #fff;
   text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
+  padding: 24px 16px;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+ 
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer p:first-child {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.6rem;
+  color: #f8f8f8; /* Light text for contrast */
+}
+
+.footer p:last-child {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* Hover effect for subtle interaction */
+.footer:hover {
+  background: #3e5f8d; /* Slightly darker Dusty Blue */
+  transition: background 0.3s ease;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .footer {
+    font-size: 0.85rem;
+    padding: 20px 12px;
+  }
+
+  .footer p:first-child {
+    font-size: 1.4rem;
+  }
 }
