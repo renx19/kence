@@ -314,11 +314,11 @@ export const GalleryItems = [
     "type": "",
     "src": "/FLO08183.jpeg"
   },
-  {
-    "id": "FLO08186",
-    "type": "",
-    "src": "/FLO08186.jpeg"
-  },
+  // {
+  //   "id": "FLO08186",
+  //   "type": "",
+  //   "src": "/FLO08186.jpeg"
+  // },
   {
     "id": "FLO08194",
     "type": "",
