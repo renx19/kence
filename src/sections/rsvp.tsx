@@ -41,8 +41,9 @@ const Rsvp: React.FC = () => {
   return (
     <section id="rsvp" className="rsvp-section">
       <div className="rsvp-card-wrapper">
+        {/* Left side — RSVP Form */}
         <motion.div
-          className="gifts-text"
+          className="rsvp-form-container"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.3 }}
@@ -81,18 +82,30 @@ const Rsvp: React.FC = () => {
             </form>
           </div>
         </motion.div>
-        {/* 👗 Right side — Dress Code Image */}
+
+        {/* Right side — YouTube Embed */}
         <motion.div
-          className="dress-code-image"
+          className="rsvp-video"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.3 }}
           variants={variants}
           transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
         >
-          <img src="/dress-code.png" alt="Dress Code" />
+          <div className="video-wrapper">
+            <iframe
+              id="rsvp-video"
+              src="https://www.youtube.com/embed/YakDcw2TUR0?si=CyXjzD4PNeiGdqGb&amp;start=97"
+              title="Wedding Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+
+          </div>
         </motion.div>
       </div>
+
       <ToastContainer position="top-right" autoClose={3000} />
     </section>
   );

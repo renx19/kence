@@ -1,4 +1,4 @@
-export const GalleryItems =[
+export const GalleryItems = [
   {
     "id": "FLO07637",
     "type": "",
@@ -335,3 +335,155 @@ export const GalleryItems =[
     "src": "/FLO08196.jpeg"
   }
 ]
+
+
+export const entourage = [
+  {
+    mainTitle: "Parents of the Groom",
+    names: ["MR. NICANOR CANDARI JR.", "MRS. JOSEPHINE CANDARI"],
+  },
+  {
+    mainTitle: "Parents of the Bride / Guardian",
+    names: ["MR. GABRIEL JONES B. PANGANIBAN", "MRS. MARUJA P. DELA CRUZ"],
+  },
+  {
+    mainTitle: "Principal Sponsors",
+    subtitle: "Groom’s Side",
+    names: [
+      "PS. JOEL HERNANDEZ",
+      "MR. EDGARD GARCIA",
+      "MR. EDGAR GARCIA",
+      "MR. STEVENSON DY",
+      "PS. ANGAELLO ARENAS",
+      "MR. ROGER BAY DO",
+      "MR. ANTONIO ESPIRITU",
+      "MR. WILFREDO BAJACAN",
+    ],
+  },
+  {
+    mainTitle: "Principal Sponsors",
+    subtitle: "Bride’s Side",
+    names: [
+      "PS. AMELIA ABEL",
+      "MRS. ESTELLITA GARCIA",
+      "MRS. EMILIE GARCIA",
+      "MRS. RASSEL BORDONES",
+      "MRS. CHRISTINE ARENAS",
+      "MRS. DIVINA DOLOR",
+      "MRS. MARIA CORAZON ESPIRITU",
+      "MRS. VILMA BAJACAN",
+    ],
+  },
+  {
+    mainTitle: "Best Man",
+    names: ["JAMES DEAN VILLALOBOS"],
+  },
+  {
+    mainTitle: "Maid of Honor",
+    names: ["NOEMI PANGANIBAN"],
+  },
+  {
+    mainTitle: "Groomsmen",
+    names: [
+      "MARK AMOS DELA CRUZ",
+      "ALDRIN MARTINEZ",
+      "JIREH JAMES ABEL",
+      "JOHN RUZZEL PANGANIBAN",
+      "JOHN CEDRICK PANGANIBAN",
+    ],
+  },
+  {
+    mainTitle: "Bridesmaids",
+    names: [
+      "CHRISTANNE JOY NARAZO",
+      "MIKEE CANDARI",
+      "MONICA ALARCON",
+      "JANILYN FERIEMAYE PAVILAR",
+      "MARIANNE EMMANUELLE DELA CRUZ",
+    ],
+  },
+  {
+    mainTitle: "Veil Sponsors",
+    names: ["CARLO JAMES ABEL", "KATRINA ANNE CORDERO"],
+  },
+  {
+    mainTitle: "Cord Sponsors",
+    names: ["JEVON BENINO", "REGINE SORIANO"],
+  },
+  {
+    mainTitle: "Candle Sponsors",
+    names: ["JERWIN VILLALOBOS", "ANN SHERLY AVELLANOZA"],
+  },
+  {
+    mainTitle: "Bearers",
+    names: [
+      "Ring: DYLAN JERICK MAESTRO",
+      "Coin: KRIS NATHANIEL PANGANIBAN",
+      "Bible: JEFF DANIEL TURLA",
+    ],
+  },
+  {
+    mainTitle: "Flower Girls",
+    names: [
+      "MIYUKI GYLZEL PANGANIBAN",
+      "APRIILLE DIVINE BRADECINA",
+      "ANICKA PAULINE ROBERTO",
+      "JOYCE MAXINE PANGANIBAN",
+      "COLENE DOMA",
+    ],
+  },
+];
+
+
+export type VenueKey = "ceremony" | "reception";
+
+export interface DirectionStep {
+  type: string;
+  text: string;
+}
+
+export interface DirectionInfo {
+  title: string;
+  venue: string;
+  steps: DirectionStep[];
+}
+
+export const directionsData: Record<VenueKey, DirectionInfo> = {
+  ceremony: {
+    title: "How To Get There — Ceremony",
+    venue: "Don Jose Heights – The Atrium, Quezon City",
+    steps: [
+      {
+        type: "By Car",
+        text: "Navigate to Don Jose Heights – The Atrium via the main gate on Quirino Highway. Follow road signs to The Atrium. Guest parking is available inside; arrive 15–20 minutes early."
+      },
+      {
+        type: "Public Transport",
+        text: "From SM North or Trinoma, take a jeepney or UV Express bound for Lagro/Quirino Highway. Alight near Don Jose Heights main gate, then take a tricycle to The Atrium. Ask the guard or tricycle driver for directions to the Atrium drop-off."
+      },
+      {
+        type: "Ride‑Hailing",
+        text: "Set the drop-off location to Don Jose Heights – The Atrium, Quezon City. Share the pin with your driver for easier access through the guardhouse."
+      },
+    ],
+  },
+  reception: {
+    title: "How To Get There — Reception",
+    venue: "Don Jose Heights – Clubhouse, Quezon City",
+    steps: [
+      {
+        type: "By Car",
+        text: "From The Atrium, follow internal road signs to the Clubhouse (Forest Barn Hall). On-site parking is available; please follow staff instructions."
+      },
+      {
+        type: "Public Transport",
+        text: "Use the same approach via Quirino Highway. Enter Don Jose Heights and take a tricycle to the Clubhouse / Forest Barn Hall."
+      },
+      {
+        type: "Ride‑Hailing",
+        text: "Set your destination to Don Jose Heights Clubhouse (Forest Barn Hall). Share the clubhouse pin with your driver for smooth entry."
+      },
+    ],
+  },
+};
+

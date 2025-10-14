@@ -1,10 +1,12 @@
 import "../styles/entourage.css";
+import { entourage } from "../data/gallery";
 
 export default function EntourageSection() {
   return (
     <section id="entourage" className="entourage-container">
       <div className="entourage-wrapper">
-        {/* Parents of the Groom */}
+        <h2 className="section-title">CANDARI - PANGANIBAN NUPTIALS</h2>
+
         <div className="entourage-section parents-section">
           <h2 className="section-title">Parents of the Groom</h2>
           <div className="parents-grid">
@@ -337,11 +339,31 @@ export default function EntourageSection() {
             </div>
           </div>
         </div>
-
-
-
-
       </div>
+
+      <div className="mobile-entourage-wrapper">
+        <h2>
+          CANDARI <br /> - <br /> PANGANIBAN <br /> NUPTIALS
+        </h2>
+
+        {entourage.map((group, index) => (
+          <div key={index} className="mobile-entourage-group">
+            <h3>
+              {group.mainTitle}
+              {group.subtitle && (
+                <span className="subtitle"> — {group.subtitle}</span>
+              )}
+            </h3>
+            <ul>
+              {group.names.map((name, i) => (
+                <li key={i}>{name}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+
     </section>
   );
 }

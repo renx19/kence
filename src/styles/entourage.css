@@ -789,3 +789,132 @@
 
 
 }
+
+/* mobile entourage */
+/* Wrapper */
+.mobile-entourage-wrapper {
+  display: none;
+  background: #5b7da6;
+  color: #ffffff;
+  padding: 24px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .entourage-wrapper {
+    display: none;
+  }
+
+  .mobile-entourage-wrapper {
+    display: block;
+     padding: 16px;
+  }
+
+}
+@media (max-width: 400px) {
+.mobile-entourage-group li {
+  font-size: 0.7rem !important;
+}
+}
+/* Title */
+.mobile-entourage-wrapper h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 800; /* made bolder */
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* Each group container */
+.mobile-entourage-group {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  transition: background 0.2s ease;
+}
+
+.mobile-entourage-group:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.mobile-entourage-wrapper h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 800; /* bolder */
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* Each group container */
+.mobile-entourage-group {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  transition: background 0.2s ease;
+}
+
+.mobile-entourage-group:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Group title with optional subtitle */
+.mobile-entourage-group h3 {
+  font-size: 1.05rem;
+  font-weight: 700; /* bolder */
+  margin-bottom: 12px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-left: 3px solid #ffffff;
+  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+/* Subtitle styling */
+.mobile-entourage-group h3 .subtitle {
+  font-weight: 500; /* slightly lighter than main title */
+  font-size: 0.9rem;
+  color: #f1f1f1cc;
+  margin-left: 6px;
+  text-transform: none;
+}
+
+/* List styling */
+.mobile-entourage-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mobile-entourage-group li {
+  font-size: 0.8rem;
+  font-weight: 600; /* bolder for readability */
+  line-height: 1.4;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.2s ease;
+}
+
+.mobile-entourage-group li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-entourage-wrapper h2 {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.4;
+}

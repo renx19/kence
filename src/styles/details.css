@@ -18,15 +18,16 @@
 }
 
 /* ---------- Section ---------- */
+
 .details-section {
   background: var(--primary-500);
-  padding: 40px 0;
+  padding: 0;
   text-align: center;
-  min-height: 100vh;  
-
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
 }
 
 .details-section h2 {
@@ -36,95 +37,78 @@
   font-weight: 700;
 }
 
+/* ---------- Container ---------- */
 .details-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 32px;
   max-width: 1200px;
-
+  margin: 0 auto;
 }
 
-/* ---------- Base Card Styles ---------- */
-.details-card-ceremony,
-.details-card-reception {
-  position: relative;
+/* ---------- Base Card ---------- */
+.details-card {
+  display: flex;
+  flex-direction: column; /* default stacked */
   width: 500px;
   max-width: 90vw;
-  min-height: 450px;
-  display: flex;
-  flex-direction: column;
-  padding: 32px 24px;
+  background: #ffffff;
   border-radius: 16px;
   overflow: hidden;
-  color: #fff;
   box-shadow: var(--shadow);
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
-  will-change: transform, box-shadow, filter;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  height: 420px; /* increased height */
 }
 
-.details-card-ceremony:hover,
-.details-card-reception:hover {
-  transform: translateY(-12px) scale(1.08);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
-  filter: brightness(1.05); /* optional: subtle pop */
+.details-card:hover {
+  transform: translateY(-8px) scale(1.05); /* scale entire card */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
 }
 
-
-
-/* ---------- Specific Backgrounds ---------- */
-.details-card-ceremony {
-  background-image: url('/Ceremony.jpeg');
-}
-
-.details-card-reception {
-  background-image: url('/Reception.jpeg');
-}
-
-/* ---------- Overlay ---------- */
-.details-card-ceremony::before,
-.details-card-reception::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.45));
-  z-index: 0;
-}
-
-/* ---------- Card Content ---------- */
-.details-card-ceremony > *,
-.details-card-reception > * {
+/* ---------- Image ---------- */
+.details-card-image {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
   position: relative;
-  z-index: 1;
 }
 
-/* ---------- Headings ---------- */
-.details-card-ceremony h3,
-.details-card-reception h3 {
+.details-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* remove image zoom effect */
+.details-card:hover .details-card-image img {
+  transform: none;
+}
+
+/* ---------- Body ---------- */
+.details-card-body {
+  padding: 1em 2rem;
+  display: flex;
+  flex-direction: column;
+  color: #333;
+}
+
+.details-card h3 {
   font-size: 1.6rem;
   margin-bottom: 12px;
   font-weight: 600;
-  text-align: center;
+  text-align: flex-start;
 }
 
-/* ---------- Divider Line ---------- */
-.line-bar {
-  width: 60px;
-  height: 3px;
-  background-color: var(--accent);
-  margin: 0 auto 16px;
-  border-radius: 2px;
-}
-
-/* ---------- Intro Text ---------- */
-.details-card-ceremony .details-intro,
-.details-card-reception .details-intro {
+.details-intro {
   font-size: 1rem;
-  margin-bottom: 16px;
   line-height: 1.6;
-  text-align: center;
+  margin: 4px;
+  text-align: justify;
+  text-align-last: center;
 }
 
 /* ---------- Meta List ---------- */
@@ -132,16 +116,15 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
   padding: 0;
-  margin-bottom: 20px;
   list-style: none;
 }
 
 .details-meta li {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #fff;
-  padding: 0.5rem 1rem;
+  background: #dbd9d9ff;
+  color: var(--text-strong);
+  padding: 0.6rem 1rem;
   border-radius: 999px;
   font-size: 0.9rem;
   font-weight: 500;
@@ -150,14 +133,13 @@
   cursor: default;
 }
 
-/* Hover Effects */
 .details-meta li:hover {
-  background-color: rgba(255, 255, 255, 0.35); /* slightly brighter */
-  transform: scale(1.05); /* subtle pop */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* light shadow */
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* ---------- Actions / Buttons ---------- */
+/* ---------- Actions ---------- */
 .details-actions {
   display: flex;
   justify-content: center;
@@ -165,14 +147,66 @@
   flex-wrap: wrap;
 }
 
-/* ---------- Hover Effects ---------- */
-.details-card-ceremony:hover,
-.details-card-reception:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-4px);
+
+/* ---------- Row layout for screens >=768px ---------- */
+/* Small row layout for medium screens 768px - 820px: column layout, taller card */
+@media (min-width: 768px) and (max-width: 899px) {
+  .details-cards {
+    gap: 32px; /* space between stacked cards */
+    padding: 1rem 2rem; /* padding inside the wrapper */
+  }
+
+  .details-card {
+    flex-direction: column; /* stack image & body */
+    width: 100%;
+    height: auto; /* let content decide height */
+    margin: 0 auto; /* center the card */
+    padding-bottom: 1rem; /* extra bottom spacing */
+  }
+
+  .details-card-image {
+    width: 100%;
+    height: 450px; /* fixed ideal image height */
+    border-radius: 16px 16px 0 0;
+  }
+
+  .details-meta li {
+    font-size: 0.75rem; /* slightly bigger for readability */
+    margin-bottom: 0.5rem; /* spacing between meta items */
+  }
+
+  .details-actions {
+    margin-top: 1rem; /* space above buttons */
+    justify-content: center;
+  }
 }
 
-/* ---------- Responsive ---------- */
+
+/* Row layout for screens >=821px */
+@media (min-width: 900px) {
+  .details-card {
+    flex-direction: row;
+    width: 1200px;
+    height: 420px;
+  }
+
+  .details-card-image {
+    width: 50%;
+    height: 100%;
+    border-radius: 16px 0 0 16px;
+  }
+
+  .details-card-body {
+    width: 50%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+
+/* ---------- Column layout for screens <768px ---------- */
 @media (max-width: 767px) {
   .details-cards {
     flex-direction: column;
@@ -180,53 +214,65 @@
     gap: 24px;
   }
 
-  .details-card-ceremony,
-  .details-card-reception {
+  .details-card {
+    flex-direction: column;
     width: 90vw;
+    height: auto;
+  }
+
+  .details-card-image {
+    width: 100%;
+    height: 300px; /* taller for mobile */
+    border-radius: 16px 16px 0 0;
+  }
+
+  .details-card-body {
+
+    padding: 1em 1.5rem;
+  }
+
+  .details-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .details-intro {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  .details-meta li {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .details-meta li {
+    font-size: 0.7rem;
    
   }
 }
 
-/* Mobile: small devices */
-@media (max-width: 560px) {
-  .details-card-ceremony,
-  .details-card-reception {
-    width: 90vw;
-    min-height: auto;
-    padding: 8px 10px;       /* even smaller padding */
-  }
-
-  .details-card-ceremony h3,
-  .details-card-reception h3 {
-    font-size: 0.95rem;      /* smaller heading */
-    margin-bottom: 6px;
-  }
-
-  .details-card-ceremony .details-intro,
-  .details-card-reception .details-intro {
-    font-size: 0.8rem;       /* smaller paragraph */
-    line-height: 1.3;        /* tighter line spacing */
-    margin-bottom: 6px;
-  }
-
-  .details-meta li {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.4rem;
-  }
+.btn,
+.btn-outline {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.85rem 1.5rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-
-
+.btn:hover,
+.btn-outline:hover {
+  transform: scale(1.05);
+}
 
 .btn {
   background-color: #3498db;
   color: white;
   border: none;
-  padding: 0.75rem 1.25rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
@@ -244,12 +290,39 @@
   color: white;
 }
 
+/* ---------- Responsive Button Size ---------- */
+@media (max-width: 1024px) {
+  .btn,
+  .btn-outline {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn,
+  .btn-outline {
+    font-size: 0.95rem;
+    padding: 0.65rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn,
+  .btn-outline {
+    font-size: 0.85rem;
+    padding: 0.55rem 0.85rem;
+  }
+}
+
+
 .line-bar {
   width: 50px;
   height: 4px;
   background: var(--primary-700);
   border-radius: 2px;
-  margin-bottom: 16px;
+  margin-bottom: 6px;
+
 }
 
 

@@ -6,87 +6,43 @@
   align-items: center;
   justify-content: center;
 }
-
-/* Use Grid consistently */
 .gifts-wrapper {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;              /* two equal columns */
+  grid-template-columns: 1fr 1fr; /* two equal columns */
   align-items: center;
   gap: clamp(16px, 3vw, 28px);
 }
 
-/* 📝 Text side */
-.gifts-text { display: flex; justify-content: center; }
-.gifts-text-inner {
-  max-width: 560px;                              /* keep content readable */
-  width: 100%;
-}
-.gifts-text h2 {
-  font-family: "Great Vibes", cursive;
-  font-size: 3.8rem;
-  color: #5b7da6;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-.gifts-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #444;
-  margin-bottom: 1.5rem;
-}
-.gifts-details { list-style: none; padding: 0; margin: 0; }
-.gifts-details li {
-  background: #ffffff;
-  padding: 10px 15px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  font-size: 1rem;
-}
-.gifts-details strong { color: #1a3e5c; }
-
-/* 👗 Image side */
 .gifts-image {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Desktop/Tablet: nice cropped hero look */
 .gifts-image img {
   width: 100%;
-  max-width: 560px;
-  height: 450px;                                 /* fixed box height */
+  max-width: 600px;
+  height: 450px;
   border-radius: 12px;
-  object-fit: cover;                              /* fills box, may crop */
+  object-fit: cover;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* 📱 Stack + no-crop on mobile */
+/* Responsive: stack images on smaller screens */
 @media (max-width: 1024px) {
   .gifts-wrapper {
-    grid-template-columns: 1fr;                  /* stack */
-    text-align: center;
+    grid-template-columns: 1fr; /* stack */
     gap: 20px;
+    text-align: center;
   }
-
-  .gifts-text h2 { font-size: 2rem; }
-  .gifts-text p { font-size: 0.95rem; }
 
   .gifts-image img {
     width: 100%;
     max-width: 600px;
-    height: auto;                                 /* natural height -> no crop */
-    min-height: 0;                                /* reset any min-height */
-    object-fit: contain;                          /* fully visible if height is constrained */
-    /* optional: cap height so it doesn't get too tall */
+    height: auto;
+    object-fit: contain;
     max-height: 70vh;
   }
 }
-
-@media (max-width: 480px) {
-  .gifts-text h2 { font-size: 1.8rem; }
-}
-
