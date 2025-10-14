@@ -25,9 +25,10 @@
 }
 .gifts-text h2 {
   font-family: "Great Vibes", cursive;
-  font-size: 2.8rem;
-  color: #b97a84;
+  font-size: 3.8rem;
+  color: #5b7da6;
   margin-bottom: 1rem;
+  text-align: center;
 }
 .gifts-text p {
   font-size: 1rem;
@@ -44,7 +45,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   font-size: 1rem;
 }
-.gifts-details strong { color: #b97a84; }
+.gifts-details strong { color: #1a3e5c; }
 
 /* 👗 Image side */
 .gifts-image {

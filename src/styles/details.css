@@ -42,7 +42,7 @@
   justify-content: center;
   gap: 32px;
   max-width: 1200px;
-  overflow-x: hidden; 
+
 }
 
 /* ---------- Base Card Styles ---------- */
@@ -215,11 +215,7 @@
   }
 }
 
-@media (max-width: 1024px) and (min-width: 620px) {
-  .details-cards {
-   
-  }
-}
+
 
 
 .btn {

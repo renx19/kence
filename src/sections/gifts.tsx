@@ -24,7 +24,7 @@ const Gifts: React.FC = () => {
           <div className="gifts-text-inner">
             <h2>Gifts</h2>
             <p>
-              Your presence at our wedding is the greatest gift of all. 
+              Your presence at our wedding is the greatest gift of all.
               If you'd like to honor us with something extra, we would truly
               appreciate your love and support as we build our future together.
               <br />
@@ -41,8 +41,17 @@ const Gifts: React.FC = () => {
             </ul>
           </div>
         </motion.div>
+        <motion.div
+          className="gifts-image"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+          variants={variants}
+          transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
+        >
+          <img src="/dress-code.png" alt="Dress Code" />
+        </motion.div>
 
-    
       </div>
     </section>
   );

@@ -2,7 +2,7 @@
 /* Container & Wrapper */
 /* ========================= */
 .entourage-container {
-           /* full width to show section background */
+  /* full width to show section background */
   padding: 60px 20px;
   color: #fff;
   text-align: center;
@@ -13,9 +13,12 @@
 .entourage-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 60px;                 /* space between sections */
-  max-width: 1200px;         /* limit content width */
-  margin: 0 auto;            /* center wrapper */
+  gap: 60px;
+  /* space between sections */
+  max-width: 1200px;
+  /* limit content width */
+  margin: 0 auto;
+  /* center wrapper */
 }
 
 /* ========================= */
@@ -31,7 +34,7 @@
 /* ========================= */
 /* Section Backgrounds */
 .parents-section {
-     /* background per section */
+  /* background per section */
   padding: 20px 20px;
   border-radius: 12px;
 }
@@ -48,9 +51,11 @@
 .parents-grid,
 .guardian-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns desktop */
+  grid-template-columns: repeat(2, 1fr);
+  /* 2 columns desktop */
   gap: 30px;
-  justify-content: center;   /* center grid horizontally */
+  justify-content: center;
+  /* center grid horizontally */
 }
 
 /* ========================= */
@@ -60,8 +65,10 @@
 .guardian-card {
   background: #d0e2f2;
   border-radius: 12px;
-  padding: 10px 15px;       /* smaller padding */
-  height: 216px;            /* fixed height */
+  padding: 10px 15px;
+  /* smaller padding */
+  height: 216px;
+  /* fixed height */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,8 +77,10 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-sizing: border-box;
   width: 100%;
-  max-width: 560px;          /* optional max width */
-  margin: 0 auto;            /* center card in grid column */
+  max-width: 560px;
+  /* optional max width */
+  margin: 0 auto;
+  /* center card in grid column */
 }
 
 .parent-card:hover,
@@ -101,7 +110,8 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #1a3e5c; /* dark blue for names */
+  color: #1a3e5c;
+  /* dark blue for names */
 }
 
 .parent-role,
@@ -119,18 +129,23 @@
 
 .parent-role:hover,
 .guardian-role:hover {
-  background-color: rgba(255, 255, 255, 0.35); /* slightly brighter */
-  transform: scale(1.05); /* subtle pop */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* light shadow */
+  background-color: rgba(255, 255, 255, 0.35);
+  /* slightly brighter */
+  transform: scale(1.05);
+  /* subtle pop */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  /* light shadow */
 }
 
 /* ========================= */
 /* Responsive tweaks */
 /* ========================= */
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width:821px) {
+
   .parents-grid,
   .guardian-grid {
     grid-template-columns: repeat(2, 1fr);
+    padding: 0 4 rem;
   }
 
   .parent-card,
@@ -139,16 +154,17 @@
   }
 }
 
+
 @media (max-width: 768px) {
+
   .parents-grid,
   .guardian-grid {
-    grid-template-columns: 1fr; /* single column tablet */
+    grid-template-columns: 1fr;
+    /* single column tablet */
+   
   }
 
-  .parent-card,
-  .guardian-card {
-    max-width: 100%;
-  }
+
 
   .parent-card img,
   .guardian-card img {
@@ -168,6 +184,7 @@
 }
 
 @media (max-width: 480px) {
+
   .parent-card,
   .guardian-card {
     padding: 10px 10px;
@@ -292,16 +309,23 @@
 }
 
  */
- .principal-sponsors-section {
+.principal-sponsors-section {
 
   padding: 20px 20px;
 
   box-sizing: border-box;
 }
 
+ .groom-side, .bride-side {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+}
+
 .sponsor-grid {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(4, 160px);
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -317,14 +341,15 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
   transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
-              box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
   gap: 8px;
   width: 100%;
   box-sizing: border-box;
   position: relative;
-  z-index: 5; /* default layer */
+  z-index: 5;
+  /* default layer */
   transform-origin: center;
 }
 
@@ -336,14 +361,17 @@
   right: 0;
   width: 50%;
   height: 100%;
-  z-index: 10; /* above neighbors */
-  pointer-events: none; /* allow clicks to pass through */
+  z-index: 10;
+  /* above neighbors */
+  pointer-events: none;
+  /* allow clicks to pass through */
   display: none;
 }
 
 .sponsor-card:hover {
-  transform: scale(1.5, 1.3); /* grow width and height */
-  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  transform: scale(1.5, 1.3);
+  /* grow width and height */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 .sponsor-card:hover::before {
@@ -357,14 +385,16 @@
   height: 70px;
   border-radius: 50%;
   object-fit: cover;
-  margin-top: 10px;  /* space from top */
+  margin-top: 10px;
+  /* space from top */
 }
 
 .sponsor-name {
   font-size: 0.8rem;
   font-weight: 600;
   color: #1a3e5c;
-  margin: 0;          /* reset margins */
+  margin: 0;
+  /* reset margins */
 }
 
 .sponsor-role {
@@ -377,7 +407,8 @@
   text-align: center;
   transition: all 0.3s ease;
   cursor: default;
-  margin-bottom: 10px;  /* space from bottom */
+  margin-bottom: 10px;
+  /* space from bottom */
 }
 
 .sponsor-card:hover .sponsor-role {
@@ -389,7 +420,7 @@
 .sponsor-group.groom-side,
 .sponsor-group.bride-side {
   padding-bottom: 5rem;
-} 
+}
 
 @media (max-width: 1024px) {
   .sponsor-grid {
@@ -411,14 +442,19 @@
 
 
 
-//brides maid
+/* //brides maid*/
 
 .person-group-wrapper {
-  display: flex;               /* arrange groups side by side if needed */
-  flex-direction: column;      /* stack vertically by default */
-  align-items: center;         /* center groups horizontally */
-  justify-content: flex-start; /* start from top */
-  gap: 4rem;                   /* space between Groomsmen and Bridesmaids */
+  display: flex;
+  /* arrange groups side by side if needed */
+  flex-direction: column;
+  /* stack vertically by default */
+  align-items: center;
+  /* center groups horizontally */
+  justify-content: flex-start;
+  /* start from top */
+  gap: 4rem;
+  /* space between Groomsmen and Bridesmaids */
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -430,7 +466,8 @@
 
 .person-grid {
   display: grid;
-  grid-template-columns: repeat(5, 160px); /* 5 cards per row */
+  grid-template-columns: repeat(5, 160px);
+  /* 5 cards per row */
   gap: 20px;
   justify-content: center;
   margin: 0 auto;
@@ -442,17 +479,19 @@
   border-radius: 12px;
   padding: 10px;
   display: flex;
-  flex-direction: column; /* vertical layout */
+  flex-direction: column;
+  /* vertical layout */
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
   transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
-              box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
   gap: 8px;
   box-sizing: border-box;
   position: relative;
-  z-index: 5;           /* default layer */
+  z-index: 5;
+  /* default layer */
   transform-origin: center;
 }
 
@@ -461,10 +500,13 @@
   content: '';
   position: absolute;
   top: 0;
-  left: 0;              /* left side overlay */
-  width: 50%;           /* only left half is above neighbors */
+  left: 0;
+  /* left side overlay */
+  width: 50%;
+  /* only left half is above neighbors */
   height: 100%;
-  z-index: 10;          /* above neighboring cards on left */
+  z-index: 10;
+  /* above neighboring cards on left */
   pointer-events: none;
   display: none;
 }
@@ -472,7 +514,7 @@
 /* Hover effect */
 .person-card:hover {
   transform: scale(1.5, 1.3);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 /* Activate left overlay */
@@ -519,13 +561,14 @@
 
 
 
-//Secondary Sponsor
+/* //Secondary Sponsor */
 .secondary-sponsors-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 4rem; /* spacing between the two grids */
+  gap: 4rem;
+  /* spacing between the two grids */
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -573,7 +616,7 @@
 
 .secondary-sponsor-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
 }
 
 .secondary-sponsor-card img {
@@ -604,19 +647,22 @@
 }
 
 .secondary-sponsor-role:hover {
-  background-color: rgba(255,255,255,0.35);
+  background-color: rgba(255, 255, 255, 0.35);
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-//Flower
+/* //Flower */
 
 .flowergirls-section {
-  display: flex;               /* stack vertically */
+  display: flex;
+  /* stack vertically */
   flex-direction: column;
-  align-items: center;         /* center horizontally */
+  align-items: center;
+  /* center horizontally */
   justify-content: flex-start;
-  gap: 4rem;                   /* space above/below section */
+  gap: 4rem;
+  /* space above/below section */
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -625,9 +671,11 @@
 
 .flowergirls-grid {
   display: grid;
-  grid-template-columns: repeat(5, 160px); /* 5 cards per row */
+  grid-template-columns: repeat(5, 160px);
+  /* 5 cards per row */
   gap: 20px;
-  justify-content: center;     /* center row when fewer cards */
+  justify-content: center;
+  /* center row when fewer cards */
   margin: 0 auto;
 }
 
@@ -641,9 +689,9 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-  transition: transform 0.35s cubic-bezier(0.25,0.8,0.25,1),
-              box-shadow 0.35s cubic-bezier(0.25,0.8,0.25,1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
   gap: 8px;
   box-sizing: border-box;
   position: relative;
@@ -656,27 +704,31 @@
   content: '';
   position: absolute;
   top: 0;
-  left: 0;            /* left side overlay */
-  width: 50%;         /* only left half */
+  left: 0;
+  /* left side overlay */
+  width: 50%;
+  /* only left half */
   height: 100%;
-  z-index: 10;        /* above left neighbors */
+  z-index: 10;
+  /* above left neighbors */
   pointer-events: none;
   display: none;
 }
 
 .flowergirl-card:hover {
   transform: scale(1.5, 1.3);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
   /* main card stays below right neighbors */
 }
 
 .flowergirl-card:hover::before {
-  display: block;     /* show left overlay */
+  display: block;
+  /* show left overlay */
 }
 
 /* Role label hover */
 .flowergirl-card:hover .flowergirl-role {
-  background-color: rgba(255,255,255,0.35);
+  background-color: rgba(255, 255, 255, 0.35);
   transform: scale(1.05);
 }
 
@@ -711,27 +763,29 @@
 /* Responsive */
 /* Smaller screens: auto-fit so columns adjust naturally */
 @media (max-width: 1024px) {
+
   .flowergirls-grid,
   .person-grid {
-      grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 
 }
 
 @media (max-width: 768px) {
+
   .flowergirls-grid,
   .person-grid {
-     grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
- 
+
 }
 
 @media (max-width: 480px) {
+
   .flowergirls-grid,
   .person-grid {
     grid-template-columns: 1fr;
   }
 
-  
-}
 
+}

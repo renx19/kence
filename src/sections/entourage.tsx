@@ -2,7 +2,7 @@ import "../styles/entourage.css";
 
 export default function EntourageSection() {
   return (
-    <section className="entourage-container">
+    <section id="entourage" className="entourage-container">
       <div className="entourage-wrapper">
         {/* Parents of the Groom */}
         <div className="entourage-section parents-section">

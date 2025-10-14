@@ -33,7 +33,7 @@ const Rsvp: React.FC = () => {
     }
   };
 
-    const variants = {
+  const variants = {
     hidden: { opacity: 0, y: 30, scale: 0.95 },
     visible: { opacity: 1, y: 0, scale: 1 },
   };
@@ -41,38 +41,47 @@ const Rsvp: React.FC = () => {
   return (
     <section id="rsvp" className="rsvp-section">
       <div className="rsvp-card-wrapper">
-      <div className="rsvp-card">
-          <h2>RSVP</h2>
-          <p>Will you attend our special day?</p>
+        <motion.div
+          className="gifts-text"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+          variants={variants}
+          transition={{ delay: 0, duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="rsvp-card">
+            <h2 className="rsvp-h2">RSVP</h2>
+            <p>Will you attend our special day?</p>
 
-          <form onSubmit={handleSubmit} className="rsvp-form" noValidate>
-            <label className="sr-only" htmlFor="rsvp-name">Full Name</label>
-            <input
-              id="rsvp-name"
-              type="text"
-              placeholder="Full Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              autoComplete="name"
-            />
+            <form onSubmit={handleSubmit} className="rsvp-form" noValidate>
+              <label className="sr-only" htmlFor="rsvp-name">Full Name</label>
+              <input
+                id="rsvp-name"
+                type="text"
+                placeholder="Full Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                autoComplete="name"
+              />
 
-            <label className="sr-only" htmlFor="rsvp-attendance">Attendance</label>
-            <select
-              id="rsvp-attendance"
-              value={attendance}
-              onChange={(e) => setAttendance(e.target.value)}
-              required
-            >
-              <option value="">Select your response</option>
-              <option value="Yes">Yes, I’ll be there!</option>
-              <option value="No">Sorry, can’t make it</option>
-            </select>
+              <label className="sr-only" htmlFor="rsvp-attendance">Attendance</label>
+              <select
+                id="rsvp-attendance"
+                value={attendance}
+                onChange={(e) => setAttendance(e.target.value)}
+                required
+              >
+                <option value="">Select your response</option>
+                <option value="Yes">Yes, I’ll be there!</option>
+                <option value="No">Sorry, can’t make it</option>
+              </select>
 
-            <button type="submit">Send RSVP</button>
-          </form>
-        </div>
-            {/* 👗 Right side — Dress Code Image */}
+              <button className="rsvp-button" type="submit">Send RSVP</button>
+            </form>
+          </div>
+        </motion.div>
+        {/* 👗 Right side — Dress Code Image */}
         <motion.div
           className="dress-code-image"
           initial="hidden"

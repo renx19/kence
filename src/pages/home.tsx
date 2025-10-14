@@ -7,7 +7,7 @@ import Gallery from "../sections/gallery";
 import Rsvp from "../sections/rsvp";
 import Gifts from '../sections/gifts'
 import song from "../assets/song.mp3";
-import EntourageSection from "../sections/entourage";
+import Entourage from "../sections/entourage";
 
 const Home: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -29,7 +29,7 @@ const Home: React.FC = () => {
         <Gifts />
         <Gallery />
         <Rsvp />
-        <EntourageSection />
+        <Entourage />
         
       </div>
 

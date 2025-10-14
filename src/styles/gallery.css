@@ -100,3 +100,44 @@
 @media (max-width: 768px) {
   .gallery-section { padding: 2rem 1rem; }
 }
+
+
+
+
+
+/* View Gallery */
+
+/* Grid Masonry container */
+
+.masonry-title{
+  text-align: center;
+  color: #ffffff;
+}
+
+.masonry-grid {
+  display: flex;
+  margin-left: -16px; /* gutter size */
+  width: auto;
+}
+
+.masonry-grid_column {
+  padding-left: 16px; /* gutter size */
+  background-clip: padding-box;
+}
+
+.masonry-item {
+  margin-bottom: 16px;
+}
+
+/* Responsive gutter (optional) */
+@media (min-width: 900px) {
+  .masonry-grid {
+    margin-left: -24px;
+  }
+  .masonry-grid_column {
+    padding-left: 24px;
+  }
+  .masonry-item {
+    margin-bottom: 24px;
+  }
+}

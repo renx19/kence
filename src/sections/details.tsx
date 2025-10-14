@@ -87,9 +87,15 @@ const Details: React.FC = () => {
   }, []);
 
 
+const variants = {
+  hidden: { opacity: 0, y: 24, scale: 0.98 },  // small shrink
+  visible: { opacity: 1, y: 0, scale: 1 },
+};
 
-
-
+const variants2 = {
+  hidden: { opacity: 0, y: 34, scale: 0.98 },  // small shrink
+  visible: { opacity: 1, y: 0, scale: 1 },
+};
 
 
   return (
@@ -105,10 +111,12 @@ const Details: React.FC = () => {
           {/* Ceremony */}
           <motion.div
             className="details-card-ceremony"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
-             transition={{ duration: 0.8, delay: 0.5 }}
+            variants={variants}
+            transition={{ delay: 0, duration: 0.8, ease: "easeOut" }}
 
           >
             <h3>The Ceremony</h3>
@@ -133,10 +141,12 @@ const Details: React.FC = () => {
           {/* Reception */}
           <motion.div
             className="details-card-reception"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+           
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            variants={variants2}
+            transition={{ delay: 0, duration: 0.8, ease: "easeOut" }}
           >
 
             <h3>The Reception</h3>
@@ -148,7 +158,7 @@ const Details: React.FC = () => {
               We can’t wait to share this magical evening with all of you and create moments that will be cherished forever.
             </p>
             <ul className="details-meta">
-              <li><strong>Date:</strong> December 15, 2025</li>
+              <li><strong>Date:</strong> November 22, 2025</li>
               <li><strong>Time:</strong> 6:00 PM</li>
               <li><strong>Venue:</strong> {receptionPlace}</li>
             </ul>
