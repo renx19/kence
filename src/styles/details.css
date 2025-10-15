@@ -53,7 +53,7 @@
   flex-direction: column; /* default stacked */
   width: 500px;
   max-width: 90vw;
-  background: #ffffff;
+  background: rgb(208, 226, 242);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -122,7 +122,7 @@
 }
 
 .details-meta li {
-  background: #dbd9d9ff;
+  background: rgb(255, 254, 254);
   color: var(--text-strong);
   padding: 0.6rem 1rem;
   border-radius: 999px;
