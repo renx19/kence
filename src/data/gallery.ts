@@ -352,7 +352,7 @@ export const entourage = [
     names: [
       "PS. JOEL HERNANDEZ",
       "MR. EDGARD GARCIA",
-      "MR. EDGAR GARCIA",
+      "MR. Irineo Garcia Jr.",
       "MR. STEVENSON DY",
       "PS. ANGAELLO ARENAS",
       "MR. ROGER BAY DO",

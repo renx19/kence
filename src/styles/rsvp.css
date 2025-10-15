@@ -2,10 +2,11 @@
 .rsvp-section {
   background: #d0e2f2;
   padding: 80px 20px;
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 /* Wrapper for RSVP Form + Video */
@@ -19,6 +20,10 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+
+
+
+
 
 /* RSVP Card */
 .rsvp-card {

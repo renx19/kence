@@ -31,10 +31,11 @@
 }
 
 .details-section h2 {
-  font-size: 2.2rem;
+  font-size:3.5rem;
   margin-bottom: 32px;
   color: var(--surface);
   font-weight: 700;
+  font-family: "Great Vibes", cursive;
 }
 
 /* ---------- Container ---------- */
@@ -116,7 +117,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 10px;
   padding: 0;
   list-style: none;
 }
@@ -176,14 +177,14 @@
   }
 
   .details-actions {
-    margin-top: 1rem; /* space above buttons */
+
     justify-content: center;
   }
 }
 
 
 /* Row layout for screens >=821px */
-@media (min-width: 900px) {
+@media (min-width: 899px) {
   .details-card {
     flex-direction: row;
     width: 1200px;
@@ -227,7 +228,6 @@
   }
 
   .details-card-body {
-
     padding: 1em 1.5rem;
   }
 

@@ -13,6 +13,7 @@ const Story: React.FC = () => {
   return (
     <section id="story" className="story-section">
       <div className="story-wrapper">
+         <h2 className="section-title-story">Our Story</h2>
         {/* First block */}
         <div className="story-content">
           <motion.div
@@ -23,7 +24,7 @@ const Story: React.FC = () => {
             variants={variants}
             transition={{ delay: 0, duration: 0.8, ease: "easeOut" }}
           >
-            <h2 className="section-title-story">Our Story</h2>
+           
             <p>
               From classmates to soulmates, our friendship blossomed into a beautiful love story over time. 
               From sharing laughs at school to memorable dates—from our first McDonald's meal to movie nights—every moment has been truly special.
