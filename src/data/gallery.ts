@@ -426,7 +426,7 @@ export const entourage = [
     mainTitle: "Flower Girls",
     names: [
       "MIYUKI GYLZEL PANGANIBAN",
-      "APRIILLE DIVINE BRADECINA",
+      "AICEE CHARIELLENE BRADECINA",
       "ANICKA PAULINE ROBERTO",
       "JOYCE MAXINE PANGANIBAN",
       "COLENE DOMA",
