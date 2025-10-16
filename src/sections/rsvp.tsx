@@ -48,6 +48,28 @@ const Rsvp: React.FC = () => {
       <div className="rsvp-card-wrapper">
         <h2 className="gift-section">RSVP</h2>
 
+
+
+        <motion.div
+          className="rsvp-video"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+          variants={variants}
+          transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="video-wrapper">
+            <iframe
+              id="rsvp-video"
+              src="https://www.youtube.com/embed/YakDcw2TUR0?si=CyXjzD4PNeiGdqGb&amp;start=97"
+              title="Wedding Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+
+          </div>
+        </motion.div>
         <motion.div
           className="rsvp-form-container"
           initial="hidden"
@@ -56,6 +78,7 @@ const Rsvp: React.FC = () => {
           variants={variants}
           transition={{ delay: 0, duration: 0.8, ease: "easeOut" }}
         >
+          
           <div className="rsvp-card">
             <h2 className="rsvp-h2">RSVP</h2>
             <p>Will you attend our special day?</p>
@@ -92,27 +115,6 @@ const Rsvp: React.FC = () => {
                 {loading ? "Sending..." : "Send RSVP"}
               </button>
             </form>
-          </div>
-        </motion.div>
-
-        <motion.div
-          className="rsvp-video"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
-          variants={variants}
-          transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
-        >
-          <div className="video-wrapper">
-            <iframe
-              id="rsvp-video"
-              src="https://www.youtube.com/embed/YakDcw2TUR0?si=CyXjzD4PNeiGdqGb&amp;start=97"
-              title="Wedding Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-
           </div>
         </motion.div>
       </div>

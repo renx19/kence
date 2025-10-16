@@ -13,7 +13,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   useEffect(() => {
     // Increase delay for smoother loading effect
-    const timer = setTimeout(() => setLoading(false), 1000); // 1 second
+    const timer = setTimeout(() => setLoading(false), 2000); // 1 second
     return () => clearTimeout(timer);
   }, []);
 
