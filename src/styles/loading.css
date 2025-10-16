@@ -43,29 +43,29 @@
 
 
 
-
+/* 
 .loading {
-  --body-color: rgb(145, 70, 101);
+  --body-color: rgb(169, 212, 236);
   --font-family: "Inter", "Source Code Pro", sans-serif;
-  --font-color: rgb(252, 185, 185);
+  --font-color: rgb(255, 255, 255);
   --font-size: 25px;
 
   --timing: 600ms;
   --jump-height: 30px;
 
-  --dot-width: 30px;
-  --dot-height: 30px;
-  --dot-1-color: rgb(179, 238, 248);
-  --dot-2-color: rgb(253, 255, 148);
-  --dot-3-color: rgb(137, 255, 91);
-  --dot-4-color: rgb(249, 134, 253);
+  --dot-width: 60px;
+  --dot-height: 60px;
+  --dot-1-color: rgb(255, 255, 255);
+  --dot-2-color: rgb(255, 255, 255);
+  --dot-3-color: rgb(251, 255, 250);
+  --dot-4-color: rgb(255, 255, 255);
 
   --footer-h1-font-family: "Inter", "Poppins", sans-serif;
   --footer-h1-font-size: 15px;
   --footer-h1s-font-size: 12px;
   --footer-h1-font-color: #8ab9ff;
   --footer-h1-font-weight: 200;
-  --footer-bg-color: rgb(68, 15, 50);
+  --footer-bg-color: rgb(23, 93, 105);
   --footer-h2-font-family: "Inter", "Poppins", sans-serif;
   --footer-h2-font-weight: 100;
   --footer-h2-font-size: 10px;
@@ -115,7 +115,7 @@
   width: var(--dot-width);
   border-radius: 50%;
   animation: jumping-dots 2s cubic-bezier(0.55, 1.55, 0.55, 1.55) infinite;
-  filter: drop-shadow(0px 0px 10px rgba(119, 72, 115, 0.521))
+  filter: drop-shadow(0px 0px 10px rgba(231, 204, 204, 0.3))
     drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.3));
   transition: var(--timing);
 }
@@ -131,6 +131,7 @@
   transform: translate(-50%, -50%);
   background-color: transparent;
   border-radius: 50%;
+  color: rgb(169, 212, 236);
 }
 
 .dot-1 {
@@ -159,5 +160,211 @@
   25% {
     transform: translateY(calc(var(--jump-height) * -1));
   }
+} */
+
+/* 
+hexagon */
+
+/* Root wrapper: avoids styling <body>, everything scoped to .loader */
+
+/* Base wrapper — everything scoped to .loader */
+
+.loader {
+  --hue: 223;
+  --sat: 10%;
+  --gray100: hsl(var(--hue), var(--sat), 90%);
+  --gray900: hsl(var(--hue), var(--sat), 10%);
+  --bg: var(--gray100);
+  --fg: var(--gray900);
+  --dur: 8s;
+  --size: 15em;
+
+  display: grid;
+  place-items: center;
+  gap: 1.25em;
+  /* color: var(--fg); */
+/* background: var(--bg); */
+  color: #fff;
+  background:  #8ebfff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  line-height: 1.5;
+ min-height: 100vh;
 }
 
+@media (prefers-color-scheme: dark) {
+  .loader {
+    --bg: var(--gray900);
+    --fg: var(--gray100)
+  }
+}
+
+.loader .loader__text {
+  margin: 0;
+}
+
+/* ✅ TRUE FULL-SCREEN OVERLAY (covers viewport width & height) */
+.loader--overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+
+  z-index: 9999;
+
+  display: grid;
+  place-items: center;
+
+
+}
+
+/* ✅ Inline full width/height (not fixed overlay) */
+.loader--fullwidth {
+  width: 100%;
+}
+
+
+
+
+
+/* Hexagon canvas */
+.loader .hexagon {
+  margin-bottom: 0.5em;
+  overflow: hidden;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+}
+
+/* Groups */
+.loader .hexagon__group {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.loader .hexagon__group:nth-child(odd) {
+  transform: rotate(30deg);
+}
+
+/* Sector base */
+.loader .hexagon__sector {
+  position: absolute;
+  top: calc(50% - 0.1em);
+  left: calc(50% - 0.1em);
+  width: 0.2em;
+  height: 0.2em;
+  animation-duration: var(--dur);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: moveOut1;
+}
+
+/* Sector ripple arms */
+.loader .hexagon__sector::before,
+.loader .hexagon__sector::after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  width: 0.2em;
+  height: 0.2em;
+  background-color: currentColor;
+  border-radius: 0.1em;
+  transform-origin: 0.1em 0.1em;
+  animation-duration: var(--dur);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: ripple;
+}
+.loader .hexagon__sector::before { transform: rotate(-30deg); }
+.loader .hexagon__sector::after  { transform: rotate(-150deg); }
+
+/* Assign moveOut# to sectors */
+.loader .hexagon__sector:nth-child(1) { animation-name: moveOut1; }
+.loader .hexagon__sector:nth-child(2) { animation-name: moveOut2; }
+.loader .hexagon__sector:nth-child(3) { animation-name: moveOut3; }
+.loader .hexagon__sector:nth-child(4) { animation-name: moveOut4; }
+.loader .hexagon__sector:nth-child(5) { animation-name: moveOut5; }
+.loader .hexagon__sector:nth-child(6) { animation-name: moveOut6; }
+
+/* Stagger per group */
+.loader .hexagon__group:nth-child(2) .hexagon__sector,
+.loader .hexagon__group:nth-child(2) .hexagon__sector::before,
+.loader .hexagon__group:nth-child(2) .hexagon__sector::after {
+  animation-delay: calc(var(--dur) * -1 / 6);
+}
+.loader .hexagon__group:nth-child(3) .hexagon__sector,
+.loader .hexagon__group:nth-child(3) .hexagon__sector::before,
+.loader .hexagon__group:nth-child(3) .hexagon__sector::after {
+  animation-delay: calc(var(--dur) * -2 / 6);
+}
+.loader .hexagon__group:nth-child(4) .hexagon__sector,
+.loader .hexagon__group:nth-child(4) .hexagon__sector::before,
+.loader .hexagon__group:nth-child(4) .hexagon__sector::after {
+  animation-delay: calc(var(--dur) * -3 / 6);
+}
+.loader .hexagon__group:nth-child(5) .hexagon__sector,
+.loader .hexagon__group:nth-child(5) .hexagon__sector::before,
+.loader .hexagon__group:nth-child(5) .hexagon__sector::after {
+  animation-delay: calc(var(--dur) * -4 / 6);
+}
+.loader .hexagon__group:nth-child(6) .hexagon__sector,
+.loader .hexagon__group:nth-child(6) .hexagon__sector::before,
+.loader .hexagon__group:nth-child(6) .hexagon__sector::after {
+  animation-delay: calc(var(--dur) * -5 / 6);
+}
+
+/* Keyframes */
+@keyframes moveOut1 {
+  from { transform: rotate(0deg) translateY(0) scale(0); }
+  3%   { transform: rotate(0deg) translateY(0.2em) scale(1); }
+  97%  { transform: rotate(0deg) translateY(7.3em) scale(1); }
+  to   { transform: rotate(0deg) translateY(7.5em) scale(0); }
+}
+@keyframes moveOut2 {
+  from { transform: rotate(60deg) translateY(0) scale(0); }
+  3%   { transform: rotate(60deg) translateY(0.2em) scale(1); }
+  97%  { transform: rotate(60deg) translateY(7.3em) scale(1); }
+  to   { transform: rotate(60deg) translateY(7.5em) scale(0); }
+}
+@keyframes moveOut3 {
+  from { transform: rotate(120deg) translateY(0) scale(0); }
+  3%   { transform: rotate(120deg) translateY(0.2em) scale(1); }
+  97%  { transform: rotate(120deg) translateY(7.3em) scale(1); }
+  to   { transform: rotate(120deg) translateY(7.5em) scale(0); }
+}
+@keyframes moveOut4 {
+  from { transform: rotate(180deg) translateY(0) scale(0); }
+  3%   { transform: rotate(180deg) translateY(0.2em) scale(1); }
+  97%  { transform: rotate(180deg) translateY(7.3em) scale(1); }
+  to   { transform: rotate(180deg) translateY(7.5em) scale(0); }
+}
+@keyframes moveOut5 {
+  from { transform: rotate(240deg) translateY(0) scale(0); }
+  3%   { transform: rotate(240deg) translateY(0.2em) scale(1); }
+  97%  { transform: rotate(240deg) translateY(7.3em) scale(1); }
+  to   { transform: rotate(240deg) translateY(7.5em) scale(0); }
+}
+@keyframes moveOut6 {
+  from { transform: rotate(300deg) translateY(0) scale(0); }
+  3%   { transform: rotate(300deg) translateY(0.2em) scale(1); }
+  97%  { transform: rotate(300deg) translateY(7.3em) scale(1); }
+  to   { transform: rotate(300deg) translateY(7.5em) scale(0); }
+}
+
+@keyframes ripple {
+  from, to { width: 0.2em; }
+  33%      { width: 2.4em; }
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .loader .hexagon__sector,
+  .loader .hexagon__sector::before,
+  .loader .hexagon__sector::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
