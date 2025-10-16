@@ -352,7 +352,7 @@ export const entourage = [
     names: [
       "PS. JOEL HERNANDEZ",
       "MR. EDGARD GARCIA",
-      "MR. EDGAR GARCIA",
+      "MR. Irineo Garcia Jr.",
       "MR. STEVENSON DY",
       "PS. ANGAELLO ARENAS",
       "MR. ROGER BAY DO",
@@ -426,7 +426,7 @@ export const entourage = [
     mainTitle: "Flower Girls",
     names: [
       "MIYUKI GYLZEL PANGANIBAN",
-      "APRIILLE DIVINE BRADECINA",
+      "AICEE CHARIELLENE BRADECINA",
       "ANICKA PAULINE ROBERTO",
       "JOYCE MAXINE PANGANIBAN",
       "COLENE DOMA",

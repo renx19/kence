@@ -27,11 +27,12 @@
   text-align: left;
 }
 
-.story-text h2 {
+.section-title-story {
   font-family: "Great Vibes", cursive;
-  font-size: 2.5rem;
-  color: #b97a84;
+  font-size: 3.5rem;
+  color: #5b7da6;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .story-text p {

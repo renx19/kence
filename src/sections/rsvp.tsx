@@ -7,9 +7,12 @@ import { motion } from "motion/react";
 const Rsvp: React.FC = () => {
   const [name, setName] = useState("");
   const [attendance, setAttendance] = useState("");
+  const [loading, setLoading] = useState(false); // New loading state
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true); // Disable button
+
     try {
       await fetch(
         "https://script.google.com/macros/s/AKfycbwvQ5RRMTBKX0ZJgjxEOilBBPElCWlrmOf-o6sHjWqDcLRByk80DOkYSZ79aRjauq-X0A/exec",
@@ -30,6 +33,8 @@ const Rsvp: React.FC = () => {
           ? `⚠️ Failed to send RSVP: ${error.message}`
           : "⚠️ Failed to send RSVP: Unknown error"
       );
+    } finally {
+      setLoading(false); // Re-enable button
     }
   };
 
@@ -41,7 +46,30 @@ const Rsvp: React.FC = () => {
   return (
     <section id="rsvp" className="rsvp-section">
       <div className="rsvp-card-wrapper">
-        {/* Left side — RSVP Form */}
+        <h2 className="gift-section">RSVP</h2>
+
+
+
+        <motion.div
+          className="rsvp-video"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+          variants={variants}
+          transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="video-wrapper">
+            <iframe
+              id="rsvp-video"
+              src="https://www.youtube.com/embed/YakDcw2TUR0?si=CyXjzD4PNeiGdqGb&amp;start=97"
+              title="Wedding Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+
+          </div>
+        </motion.div>
         <motion.div
           className="rsvp-form-container"
           initial="hidden"
@@ -50,6 +78,7 @@ const Rsvp: React.FC = () => {
           variants={variants}
           transition={{ delay: 0, duration: 0.8, ease: "easeOut" }}
         >
+          
           <div className="rsvp-card">
             <h2 className="rsvp-h2">RSVP</h2>
             <p>Will you attend our special day?</p>
@@ -78,30 +107,14 @@ const Rsvp: React.FC = () => {
                 <option value="No">Sorry, can’t make it</option>
               </select>
 
-              <button className="rsvp-button" type="submit">Send RSVP</button>
+              <button
+                className="rsvp-button"
+                type="submit"
+                disabled={loading}
+              >
+                {loading ? "Sending..." : "Send RSVP"}
+              </button>
             </form>
-          </div>
-        </motion.div>
-
-        {/* Right side — YouTube Embed */}
-        <motion.div
-          className="rsvp-video"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
-          variants={variants}
-          transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
-        >
-          <div className="video-wrapper">
-            <iframe
-              id="rsvp-video"
-              src="https://www.youtube.com/embed/YakDcw2TUR0?si=CyXjzD4PNeiGdqGb&amp;start=97"
-              title="Wedding Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-
           </div>
         </motion.div>
       </div>

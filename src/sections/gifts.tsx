@@ -10,6 +10,8 @@ const Gifts: React.FC = () => {
 
   return (
     <section id="gifts" className="gifts-section">
+  
+       <h2 className="gift-section">Gifts</h2>
       <div className="gifts-wrapper">
         {/* Left Image */}
         <motion.div

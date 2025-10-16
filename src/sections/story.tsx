@@ -13,6 +13,7 @@ const Story: React.FC = () => {
   return (
     <section id="story" className="story-section">
       <div className="story-wrapper">
+         <h2 className="section-title-story">Our Story</h2>
         {/* First block */}
         <div className="story-content">
           <motion.div
@@ -23,11 +24,13 @@ const Story: React.FC = () => {
             variants={variants}
             transition={{ delay: 0, duration: 0.8, ease: "easeOut" }}
           >
-            <h2>Our Story</h2>
+           
             <p>
-              A frienship that develops over time. From schoolmate to soulmate, our journey of laughter, adventure and love.
+              From classmates to soulmates, our friendship blossomed into a beautiful love story over time. 
+              From sharing laughs at school to memorable dates—from our first McDonald's meal to movie nights—every moment has been truly special.
+              Now, we're thrilled to invite you to celebrate the next chapter of our journey—our wedding day!
             </p>
-         
+
           </motion.div>
 
           <motion.div
@@ -65,10 +68,11 @@ const Story: React.FC = () => {
             variants={variants}
             transition={{ delay: 0.9, duration: 0.8, ease: "easeOut" }}
           >
-           
-     
+
+
             <p>
-             From our first mcdo date to movie date that everymoment is special. We can’t wait to share our lovey wedding day with all of you.
+             Join us as we say "I do" and begin our forever, surrounded by the people who have been part of our story. Your presence will make our celebration even more meaningful, and 
+             we can’t wait to share this joyous occasion with you.
             </p>
           </motion.div>
         </div>

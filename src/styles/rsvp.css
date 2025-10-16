@@ -2,10 +2,11 @@
 .rsvp-section {
   background: #d0e2f2;
   padding: 80px 20px;
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 /* Wrapper for RSVP Form + Video */
@@ -19,6 +20,10 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+
+
+
+
 
 /* RSVP Card */
 .rsvp-card {
@@ -64,10 +69,10 @@
   border: 0;
 }
 @media (max-width: 820px) and (min-width: 768px){
-    .rsvp-card-wrapper {
-
-    padding: 6rem;
+    .rsvp-section {
+    padding: 6rem 6rem;
   }
+ 
 }
 /* Stack on smaller screens */
 @media (max-width: 820px) {

@@ -6,6 +6,7 @@ import Invitation from "./pages/invitation";
 import Layout from "./layout/layout";
 import ViewGallery from "./pages/ViewGallery";
 import './styles/global.css'
+import Loading from "./components/loading";
 
 const App: React.FC = () => {
   const navigate = useNavigate();
@@ -17,7 +18,8 @@ const App: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<Invitation onOpen={handleOpen} />} />
-      <Route path="/gallery" element= {<ViewGallery />} />
+      <Route path="/gallery" element={<ViewGallery />} />
+      <Route path="/loading" element={<Loading />} />
       <Route
         path="/home"
         element={

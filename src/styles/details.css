@@ -31,10 +31,11 @@
 }
 
 .details-section h2 {
-  font-size: 2.2rem;
+  font-size:3.5rem;
   margin-bottom: 32px;
   color: var(--surface);
   font-weight: 700;
+  font-family: "Great Vibes", cursive;
 }
 
 /* ---------- Container ---------- */
@@ -53,7 +54,7 @@
   flex-direction: column; /* default stacked */
   width: 500px;
   max-width: 90vw;
-  background: #ffffff;
+  background: rgb(208, 226, 242);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -116,13 +117,13 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 10px;
   padding: 0;
   list-style: none;
 }
 
 .details-meta li {
-  background: #dbd9d9ff;
+  background: rgb(255, 254, 254);
   color: var(--text-strong);
   padding: 0.6rem 1rem;
   border-radius: 999px;
@@ -176,14 +177,14 @@
   }
 
   .details-actions {
-    margin-top: 1rem; /* space above buttons */
+
     justify-content: center;
   }
 }
 
 
 /* Row layout for screens >=821px */
-@media (min-width: 900px) {
+@media (min-width: 899px) {
   .details-card {
     flex-direction: row;
     width: 1200px;
@@ -227,7 +228,6 @@
   }
 
   .details-card-body {
-
     padding: 1em 1.5rem;
   }
 
