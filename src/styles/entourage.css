@@ -542,6 +542,7 @@
 .person-name {
   font-size: 0.9rem;
   font-weight: 600;
+  color: #1a3e5c;
   margin: 0;
 }
 
@@ -745,6 +746,7 @@
   font-size: 0.9rem;
   font-weight: 600;
   margin: 0;
+    color: #1a3e5c;
 }
 
 .flowergirl-role {

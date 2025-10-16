@@ -6,7 +6,7 @@ import Details from "../sections/details";
 import Gallery from "../sections/gallery";
 import Rsvp from "../sections/rsvp";
 import Gifts from '../sections/gifts'
-import song from "../assets/wedding-song.mp3";
+import song from "../assets/wedding-song1.mp3";
 import Entourage from "../sections/entourage";
 
 const Home: React.FC = () => {
