@@ -58,8 +58,8 @@ export default function EntourageSection() {
                 <p className="sponsor-role">Groom's Side</p>
               </div>
               <div className="sponsor-card">
-                <img src="https://picsum.photos/200?random=5" alt="MR. EDGAR GARCIA" />
-                <p className="sponsor-name">MR. EDGAR GARCIA</p>
+                <img src="https://picsum.photos/200?random=5" alt="MR. IRINEO GARCIA JR." />
+                <p className="sponsor-name">MR. IRINEO GARCIA JR.</p>
                 <p className="sponsor-role">Groom's Side</p>
               </div>
               <div className="sponsor-card">
@@ -318,8 +318,8 @@ export default function EntourageSection() {
               <p className="flowergirl-role">Flower Girl</p>
             </div>
             <div className="flowergirl-card">
-              <img src="https://picsum.photos/100?random=42" alt="APRIILLE DIVINE BRADECINA" />
-              <p className="flowergirl-name">APRIILLE DIVINE BRADECINA</p>
+              <img src="https://picsum.photos/100?random=42" alt="AICEE CHARIELLENE BRADECINA" />
+              <p className="flowergirl-name">AICEE CHARIELLENE BRADECINA</p>
               <p className="flowergirl-role">Flower Girl</p>
             </div>
             <div className="flowergirl-card">
