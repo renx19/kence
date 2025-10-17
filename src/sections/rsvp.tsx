@@ -45,7 +45,7 @@
 
 //   return (
 //     <section id="rsvp" className="rsvp-section">
-   
+
 //         <h2 className="gift-section">RSVP</h2>
 
 
@@ -78,7 +78,7 @@
 //           variants={variants}
 //           transition={{ delay: 0, duration: 0.8, ease: "easeOut" }}
 //         >
-          
+
 //           <div className="rsvp-card">
 //             <h2 className="rsvp-h2">RSVP</h2>
 //             <p>Will you attend our special day?</p>
@@ -117,7 +117,7 @@
 //             </form>
 //           </div>
 //         </motion.div>
-   
+
 
 //       <ToastContainer position="top-right" autoClose={3000} />
 //     </section>
@@ -150,21 +150,24 @@ const Rsvp: React.FC = () => {
 
     const formData = new URLSearchParams({
       name,
-      email,  
+      email,
       attendance,
       origin: window.location.origin,
     });
 
     try {
-      const res = await fetch("https://script.google.com/macros/s/AKfycbyHmzgRrSaMFxqKFTc-EGbq8Kqo_DObVqN846Aq6pGJjw7N7A0sLHo8I2NZQsJjzyC43Q/exec", {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbw_0kTCXND6HOoqwaG2XA-2Lx7DYGjHrG1B7i_jBhnXQN5ysrTTz-_pygUWmoNrKfep-Q/exec", {
         method: "POST",
-        body: formData,
+        body: formData, // ✅ URL encoded
       });
 
-      const text = await res.text(); // Read raw response
-      const json = JSON.parse(text); // Try to parse it
+      const text = await res.text();
+      const json = JSON.parse(text);
 
-      if (json.success) { 
+      if (json.success) {
+        toast.success("✅ RSVP submitted!");
+        setName("");
+        setEmail("");
         setAttendance("");
       } else {
         toast.error(`⚠️ ${json.message}`);
