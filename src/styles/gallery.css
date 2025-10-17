@@ -16,6 +16,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem; /* spacing between wrapper and grid */
+  text-align: center
 }
 
 /* Wrapper: heading + button side-by-side, stack on small screens */
@@ -29,12 +30,15 @@
 }
 
 /* Heading (avoid default h2 margins to prevent overlap) */
-.gallery-title {
+.gallery-title, .prenup-title {
   margin: 0;
   line-height: 1.2;
   color: #ffffff;
   font-size: 3.5rem;
   font-family: "Great Vibes", cursive;
+}
+.prenup-title{
+  padding-top: 3rem;
 }
 
 /* Actions: keep button aligned */
@@ -157,5 +161,50 @@
   }
   100% {
     background-position: 400% 0;
+  }
+}
+
+/* === prenup Section === */
+
+
+/* === Video Wrapper === */
+.prenup-video {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+  padding-bottom: 4rem;
+}
+
+/* === YouTube Video Container === */
+#prenup-video {
+  width: 100%;
+  height: 100%;
+  min-height: 650px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 820px) {
+  .prenup-section {
+    padding: 6rem 1rem;
+  }
+  .prenup-video{
+     padding-bottom: 2rem;
+    
+  }
+
+  #prenup-video {
+    min-height: 420px;
+    
+  }
+}
+
+@media (max-width: 500px) {
+  #prenup-video {
+    min-height: 320px;
   }
 }

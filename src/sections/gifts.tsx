@@ -11,8 +11,9 @@ const Gifts: React.FC = () => {
   return (
     <section id="gifts" className="gifts-section">
   
-       <h2 className="gift-section">Gifts</h2>
+
       <div className="gifts-wrapper">
+        <h2 className="gift-section">Gifts  & Dress Code</h2>
         {/* Left Image */}
         <motion.div
           className="gifts-image"

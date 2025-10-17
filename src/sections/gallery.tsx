@@ -16,6 +16,23 @@ const Gallery = () => {
   return (
     <section id="gallery" className="gallery-section">
       <div className="gallery-container">
+        <h2 className="prenup-title">Prenup Video</h2>{/* explicit class */}
+        <div
+          className="prenup-video"
+
+        >
+          <div className="video-wrapper">
+            <iframe
+              id="prenup-video"
+              src="https://www.youtube.com/embed/YakDcw2TUR0?si=CyXjzD4PNeiGdqGb&amp;start=97"
+              title="Wedding Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+
+          </div>
+        </div>
 
         <div className="gallery-wrapper">{/* fixed name */}
           <h2 className="gallery-title">Gallery</h2>{/* explicit class */}

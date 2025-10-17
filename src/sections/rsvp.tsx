@@ -45,12 +45,12 @@ const Rsvp: React.FC = () => {
 
   return (
     <section id="rsvp" className="rsvp-section">
-      <div className="rsvp-card-wrapper">
+   
         <h2 className="gift-section">RSVP</h2>
 
 
 
-        <motion.div
+        {/* <motion.div
           className="rsvp-video"
           initial="hidden"
           whileInView="visible"
@@ -69,7 +69,7 @@ const Rsvp: React.FC = () => {
             ></iframe>
 
           </div>
-        </motion.div>
+        </motion.div> */}
         <motion.div
           className="rsvp-form-container"
           initial="hidden"
@@ -117,7 +117,7 @@ const Rsvp: React.FC = () => {
             </form>
           </div>
         </motion.div>
-      </div>
+   
 
       <ToastContainer position="top-right" autoClose={3000} />
     </section>

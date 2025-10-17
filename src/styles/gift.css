@@ -1,29 +1,39 @@
 .gifts-section {
   background: #d0e2f2;
-  padding: 80px 20px;
+  padding: 40px 20px;
   min-height: 50vh;
   display: flex;
+  flex-direction: column; /* stack heading + wrapper */
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }
 
+/* FLEX WRAPPER (2-up on wide, stacked on narrow) */
 .gifts-wrapper {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* two equal columns */
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* allows wrap to next line */
   align-items: center;
-  gap: clamp(16px, 3vw, 28px);
+  justify-content: center;
+  gap: clamp(16px, 3vw, 28px); /* native flex gap */
 }
 
+/* Each image panel takes about half width on large, shrinks as needed */
 .gifts-image {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  /* Two columns by default */
+  flex: 1 1 520px;    /* grow | shrink | preferred width */
+  max-width: 560px;   /* prevent over-expansion on huge screens */
 }
 
+/* Image styling */
 .gifts-image img {
   width: 100%;
   max-width: 600px;
@@ -33,35 +43,36 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive: stack images on smaller screens */
-@media (max-width: 1024px) {
-  .gifts-wrapper {
-    grid-template-columns: 1fr;
-    /* stack */
-    gap: 20px;
-    text-align: center;
-  }
-
-  .gifts-image img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    object-fit: contain;
-    max-height: 70vh;
-  }
-}
-
+/* Heading */
 .gift-section {
+  width: 100%;
+  text-align: center;
   font-size: 3.5rem;
-  margin-bottom: 32px;
   color: var(--primary-500);
   font-weight: 700;
   font-family: "Great Vibes", cursive;
 }
 
-.gift-section {
-  grid-column: 1 / -1;
-  /* spans all columns */
-  text-align: center;
-  margin-bottom: 24px;
+/* Responsive: stack images on smaller screens */
+@media (max-width: 1024px) {
+  .gifts-wrapper {
+    flex-direction: column; /* stack */
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .gifts-image {
+    flex: 0 1 auto;     /* size to content */
+    max-width: 100%;
+  }
+
+  .gifts-image img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;       /* avoid fixed height on small screens */
+    object-fit: contain;
+    max-height: 70vh;
+  }
 }
