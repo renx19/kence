@@ -101,7 +101,7 @@ const Details: React.FC = () => {
               <div className="line-bar"></div>
               <p className="details-intro">
                 After the ceremony, join us for an enchanting evening of celebration filled with delicious food, lively music, and heartfelt moments with friends and family.
-                We can’t wait to share this magical evening with all of you and create moments that will be cherished forever.
+                We can’t wait to share this beautiful evening with all of you and create moments that will be cherished forever.
               </p>
               <ul className="details-meta">
                 <li><strong>Date:</strong> November 22, 2025</li>
