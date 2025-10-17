@@ -150,13 +150,13 @@ const Rsvp: React.FC = () => {
 
     const formData = new URLSearchParams({
       name,
-      email,
+      email,  
       attendance,
       origin: window.location.origin,
     });
 
     try {
-      const res = await fetch("https://script.google.com/macros/s/AKfycbx9Qsv5NW4VHRiOAXKOSE4zPQQxso9vhN4floOiEoeW00Lc3GSKu8vxRlQ3ZGt6xr9aag/exec", {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbyHmzgRrSaMFxqKFTc-EGbq8Kqo_DObVqN846Aq6pGJjw7N7A0sLHo8I2NZQsJjzyC43Q/exec", {
         method: "POST",
         body: formData,
       });
@@ -164,10 +164,7 @@ const Rsvp: React.FC = () => {
       const text = await res.text(); // Read raw response
       const json = JSON.parse(text); // Try to parse it
 
-      if (json.success) {
-        toast.success("✅ RSVP submitted!");
-        setName("");
-        setEmail("");
+      if (json.success) { 
         setAttendance("");
       } else {
         toast.error(`⚠️ ${json.message}`);
