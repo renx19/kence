@@ -99,4 +99,7 @@
   .story-wrapper {
     padding: 6rem;
   }
+  .story-section{
+    min-height: 60vh;
+  }
 }
