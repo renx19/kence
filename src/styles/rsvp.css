@@ -19,7 +19,7 @@
 
 @media (min-width: 768px) {
   #rsvp-iframe-wrapper {
-    height: 1000px; /* taller on tablet/desktop */
+    height: 1300px; /* taller on tablet/desktop */
   }
 }
 
