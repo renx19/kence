@@ -14,7 +14,7 @@
   width: 100%;
   max-width: 600px;
   height: 1200px; /* large enough to fit form */
-  background: #ffff;
+ 
 }
 
 @media (min-width: 768px) {
