@@ -10,8 +10,8 @@ import Entourage from "../sections/entourage";
 import song from "../assets/wedding-song1.mp3";
 
 const Home: React.FC = () => {
-  const audioRef = useRef<HTMLAudioElement>(null);
-
+   const audioRef = useRef<HTMLAudioElement | null>(null);
+   
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = 0.8;
