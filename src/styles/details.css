@@ -255,65 +255,80 @@
   }
 }
 
-.btn,
-.btn-outline {
+/* =========================
+   Base Button Styles
+========================= */
+.details-btn,
+.details-btn-outline {
   font-size: 1.1rem;
   font-weight: 500;
   padding: 0.85rem 1.5rem;
   border-radius: 6px;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.btn:hover,
-.btn-outline:hover {
+.details-btn:hover,
+.details-btn-outline:hover {
   transform: scale(1.05);
 }
 
-.btn {
+/* Solid button */
+.details-btn {
   background-color: #3498db;
-  color: white;
+  color: #fff;
   border: none;
 }
 
-.btn:hover {
+.details-btn:hover {
   background-color: #2980b9;
 }
 
-.btn-outline {
+/* Outline button */
+.details-btn-outline {
   background-color: transparent;
   color: #3498db;
   border: 2px solid #3498db;
 }
 
-.btn-outline:hover {
+.details-btn-outline:hover {
   background-color: #3498db;
-  color: white;
+  color: #fff;
 }
 
-/* ---------- Responsive Button Size ---------- */
+/* =========================
+   Responsive Adjustments
+========================= */
 @media (max-width: 1024px) {
-  .btn,
-  .btn-outline {
+  .details-btn,
+  .details-btn-outline {
     font-size: 1rem;
     padding: 0.75rem 1.25rem;
   }
 }
 
 @media (max-width: 768px) {
-  .btn,
-  .btn-outline {
+  .details-btn,
+  .details-btn-outline {
     font-size: 0.95rem;
     padding: 0.65rem 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .btn,
-  .btn-outline {
+  .details-btn,
+  .details-btn-outline {
     font-size: 0.85rem;
-    padding: 0.55rem 0.85rem;
+    padding: 0.5rem 0.75rem;
   }
 }
+
+
+
 
 
 .line-bar {
@@ -460,6 +475,86 @@
     justify-content: center;
   }
 }
+
+
+@media (max-width: 420px) {
+
+  .modal-overlay {
+    display: flex;           /* switch from grid to flex for better control */
+    align-items: flex-start; /* start from top */
+    justify-content: center;
+    padding-top: 80px;       /* push it below navbar */
+    padding-bottom: 20px;
+    overflow-y: auto;        /* allow scrolling if modal is taller than viewport */
+  }
+
+  .modal {
+    max-height: 90vh;        /* prevent modal from exceeding viewport */
+    overflow-y: auto;        /* scroll inside modal if content is tall */
+    margin: 0 auto;          /* center horizontally */
+    border-radius: 12px;
+  }
+
+
+  .modal-header {
+    padding: 12px 14px;
+  }
+
+  .modal-header h4 {
+    font-size: 0.9rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .modal-close {
+    font-size: 1rem;
+    padding: 0 4px;
+  }
+
+  .modal-body {
+    padding: 14px;
+  }
+
+  .modal-venue {
+    font-size: 0.7rem;
+  }
+
+  .direction-steps li {
+    padding: 10px;
+    grid-template-columns: 1fr;
+  }
+
+  .step-badge {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+
+  .direction-steps p {
+    font-size: 0.7rem;
+  }
+
+  .modal-footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 10px;
+  }
+
+  .modal-footer .btn,
+  .modal-footer .btn-outline {
+    flex: 0 0 auto;
+    max-width: max-content;
+    text-align: center;
+    font-size: 0.7rem;
+  }
+
+  .chip {
+    font-size: 0.7rem;
+    padding: 6px 10px;
+  }
+}
+
+
 
 
 /* Header row: icon + left-aligned title */
