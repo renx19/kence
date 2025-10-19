@@ -1,5 +1,5 @@
 // layout/Layout.tsx
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Loading from "../components/loading";
@@ -10,6 +10,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [loading, setLoading] = useState(true);
+   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     // Increase delay for smoother loading effect
@@ -21,7 +22,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <>
-      <Navbar />
+      <Navbar audioRef={audioRef} />
       <main>{children}</main>
       <Footer />
     </>
