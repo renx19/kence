@@ -344,7 +344,7 @@ export const entourage = [
   },
   {
     mainTitle: "Parents of the Bride / Guardian",
-    names: ["MR. GABRIEL JONES B. PANGANIBAN", "MRS. MARUJA P. DELA CRUZ"],
+    names: ["MR. GABRIEL B. PANGANIBAN", "MRS. MARUJA P. DELA CRUZ"],
   },
   {
     mainTitle: "Principal Sponsors",
@@ -398,7 +398,7 @@ export const entourage = [
       "CHRISTANNE JOY NARAZO",
       "MIKEE CANDARI",
       "MONICA ALARCON",
-      "JANILYN FERIEMAYE PAVILAR",
+      "JANILYN FERIEMAYE FAVILAR",
       "MARIANNE EMMANUELLE DELA CRUZ",
     ],
   },
