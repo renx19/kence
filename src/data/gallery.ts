@@ -343,7 +343,7 @@ export const entourage = [
     names: ["MR. NICANOR CANDARI JR.", "MRS. JOSEPHINE CANDARI"],
   },
   {
-    mainTitle: "Parents of the Bride / Guardian",
+    mainTitle: "Guardian of the Bride",
     names: ["MR. GABRIEL B. PANGANIBAN", "MRS. MARUJA P. DELA CRUZ"],
   },
   {
