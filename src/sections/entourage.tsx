@@ -206,7 +206,7 @@ export default function EntourageSection() {
 
           {/* Bridesmaids */}
           <div className="person-group bridesmaids-side">
-            <h3 className="group-title">Bridesmaids</h3>
+            <h3 className="group-title">Bridesmaid</h3>
             <div className="person-grid">
               <div className="person-card">
                 <div className="person-inner">

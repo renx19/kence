@@ -393,7 +393,7 @@ export const entourage = [
     ],
   },
   {
-    mainTitle: "Bridesmaids",
+    mainTitle: "Bridesmaid",
     names: [
       "CHRISTANNE JOY NARAZO",
       "MIKEE CANDARI",
