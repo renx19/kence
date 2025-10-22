@@ -76,8 +76,8 @@ const Details: React.FC = () => {
                 <li><strong>Venue:</strong> {directionsData.ceremony.venue}</li>
               </ul>
               <div className="details-actions">
-                <button className="btn" onClick={() => openFor("ceremony")}>How To Get There</button>
-                <a className="btn btn-outline" href={mapLink(directionsData.ceremony.venue)} target="_blank" rel="noopener noreferrer">
+                <button className="details-btn" onClick={() => openFor("ceremony")}>How To Get There</button>
+                <a className="details-btn-outline" href={mapLink(directionsData.ceremony.venue)} target="_blank" rel="noopener noreferrer">
                   View Map
                 </a>
               </div>
@@ -109,8 +109,8 @@ const Details: React.FC = () => {
                 <li><strong>Venue:</strong> {directionsData.reception.venue}</li>
               </ul>
               <div className="details-actions">
-                <button className="btn" onClick={() => openFor("reception")}>How To Get There</button>
-                <a className="btn btn-outline" href={mapLink(directionsData.reception.venue)} target="_blank" rel="noopener noreferrer">
+                <button className="details-btn" onClick={() => openFor("reception")}>How To Get There</button>
+                <a className="details-btn-outline" href={mapLink(directionsData.reception.venue)} target="_blank" rel="noopener noreferrer">
                   View Map
                 </a>
               </div>
@@ -140,8 +140,8 @@ const Details: React.FC = () => {
               </div>
 
               <div className="modal-footer">
-                <a className="btn" href={directionsLink(directionsData[openModal].venue)} target="_blank" rel="noopener noreferrer">Open Directions</a>
-                <a className="btn btn-outline" href={mapLink(directionsData[openModal].venue)} target="_blank" rel="noopener noreferrer">View Map</a>
+                <a className="details-btn" href={directionsLink(directionsData[openModal].venue)} target="_blank" rel="noopener noreferrer">Open Directions</a>
+                <a className="details-btn-outline" href={mapLink(directionsData[openModal].venue)} target="_blank" rel="noopener noreferrer">View Map</a>
               </div>
             </div>
           </div>

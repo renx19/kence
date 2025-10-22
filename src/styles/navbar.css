@@ -1,4 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Limelight&display=swap');
+
+/* Audio toggle button */
+.btn-audio {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  position: absolute;
+  right: 30px; /* rightmost in navbar on desktop */
+  top: 65%;
+  transform: translateY(-65%);
+  z-index: 1002;
+}
+
+/* Mobile: move next to hamburger menu */
+@media (max-width: 768px) {
+  .btn-audio {
+    position: absolute;
+    right: 70px; /* slightly left of hamburger */
+    top: 65%;
+    transform: translateY(-65%);
+  
+  }
+}
+
+
 .navbar {
   position: fixed;
   top: 0;
@@ -11,6 +38,7 @@
   z-index: 1000;
   border-bottom: 2px solid #fff;
 }
+
 
 /* Inner container for padding and centering */
 .navbar-inner {

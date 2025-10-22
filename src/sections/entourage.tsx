@@ -29,7 +29,7 @@ export default function EntourageSection() {
           <div className="guardian-grid">
             <div className="guardian-card">
               <img src="https://picsum.photos/200?random=3" alt="Guardian Male" />
-              <p className="guardian-name">MR. GABRIEL JONES B. PANGANIBAN</p>
+              <p className="guardian-name">MR. GABRIEL B. PANGANIBAN</p>
               <p className="guardian-role">Guardian of the Bride</p>
             </div>
             <div className="guardian-card">
@@ -232,7 +232,7 @@ export default function EntourageSection() {
               <div className="person-card">
                 <div className="person-inner">
                   <img src="https://picsum.photos/100?random=39" alt="JANILYN FERIEMAYE PAVILAR" />
-                  <p className="person-name">JANILYN FERIEMAYE PAVILAR</p>
+                  <p className="person-name">JANILYN FERIEMAYE FAVILAR</p>
                   <p className="person-role">Bridesmaid</p>
                 </div>
               </div>

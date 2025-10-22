@@ -24,13 +24,12 @@ const Gallery = () => {
           <div className="video-wrapper">
             <iframe
               id="prenup-video"
-              src="https://www.youtube.com/embed/YakDcw2TUR0?si=CyXjzD4PNeiGdqGb&amp;start=97"
+              src="https://www.youtube.com/embed/5CnmImL1UT0?si=2YjfvM0gFfwVqdH1"
               title="Wedding Video"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
-
           </div>
         </div>
 
